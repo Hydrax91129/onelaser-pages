@@ -25,41 +25,36 @@ h1 em{font-style:normal;background:linear-gradient(90deg,#ffd166,#ff5a1f);-webki
 .kpi .l{font-size:12.5px;color:var(--ink2)}
 .bar{height:8px;background:#eef0f4;border-radius:99px;overflow:hidden;margin-top:6px}
 .bar i{display:block;height:100%;background:var(--c);transition:width .3s}
-.ctrl{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:26px 0 14px}
-.seg{display:flex;background:#fff;border-radius:12px;padding:4px;box-shadow:0 2px 8px rgba(20,33,61,.06)}
-.seg button{border:0;background:transparent;padding:8px 16px;border-radius:9px;font-weight:700;cursor:pointer;color:var(--ink2);font-size:13.5px}
-.seg button.on{background:var(--ink);color:#fff}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{border:2px solid var(--c);background:#fff;color:var(--c);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:700;cursor:pointer}
-.chip.on{background:var(--c);color:#fff}
-.opt{display:flex;gap:14px;align-items:center;font-size:13px;color:var(--ink2)}
-.opt label{display:flex;gap:6px;align-items:center;cursor:pointer}
-.note{background:#fff7ed;border:2px solid #fed7aa;border-radius:14px;padding:11px 14px;font-size:13px;color:#7c2d12;margin-bottom:16px}
-.people{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.pc{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(20,33,61,.06)}
-.ph{padding:14px 18px;color:#fff;background:linear-gradient(120deg,var(--c),var(--c2));display:flex;justify-content:space-between;align-items:center;gap:10px}
-.ph .n{font-size:18px;font-weight:900}
-.ph .r{font-size:12.5px;opacity:.95}
+.note{background:#fff7ed;border:2px solid #fed7aa;border-radius:14px;padding:11px 14px;font-size:13px;color:#7c2d12;margin:24px 0 18px}
+.people{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.pc{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(20,33,61,.07)}
+.pc.wide{grid-column:1/-1}
+.ph{padding:16px 20px;color:#fff;background:linear-gradient(120deg,var(--c),var(--c2));display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ph .n{font-size:20px;font-weight:900}
+.ph .r{font-size:13px;opacity:.95}
 .ph .pg{text-align:right;font-size:12.5px;min-width:110px}
 .ph .pg b{font-size:20px;display:block}
 .ph .bar{background:rgba(255,255,255,.3)}.ph .bar i{background:#fff}
-.task{display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:start;padding:10px 18px;border-top:1px solid var(--line);cursor:pointer}
-.task:hover{background:#f8faff}
-.task input{width:18px;height:18px;margin-top:2px;accent-color:var(--c);cursor:pointer}
+.kp{padding:14px 20px;background:var(--cb);display:grid;gap:8px}
+.kp .lb{font-size:11.5px;font-weight:800;color:var(--c);letter-spacing:.8px}
+.kk{display:flex;gap:10px;align-items:baseline;background:#fff;border-radius:12px;padding:10px 12px;border-left:5px solid var(--c)}
+.kk b{font-size:18px;color:var(--c);white-space:nowrap}
+.kk span{font-size:13.5px;color:var(--ink2)}
+.blocks{display:grid;grid-template-columns:1fr;gap:0}
+.pc.wide .blocks{grid-template-columns:repeat(4,1fr)}
+.blk{padding:12px 20px 14px;border-top:1px solid var(--line)}
+.pc.wide .blk{border-right:1px solid var(--line)}
+.pc.wide .blk:last-child{border-right:0}
+.blk h4{margin:0 0 6px;font-size:13px;color:var(--c);display:flex;align-items:center;gap:6px}
+.blk h4:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.task{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:start;padding:7px 0;cursor:pointer}
+.task input{width:18px;height:18px;margin-top:1px;accent-color:var(--c);cursor:pointer}
 .task .t{font-size:14px}
 .task.done .t{text-decoration:line-through;color:#9aa3b2}
-.task .meta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .d{font-size:12px;font-weight:800;padding:2px 9px;border-radius:999px;background:var(--db);color:var(--df);white-space:nowrap}
-.p{font-size:11px;font-weight:900;padding:2px 7px;border-radius:6px;color:#fff}
-.p0{background:#dc2626}.p1{background:#d97706}.p2{background:#64748b}
-.who{font-size:11.5px;font-weight:800;padding:2px 8px;border-radius:999px;color:#fff;background:var(--c)}
-.day{background:#fff;border-radius:18px;box-shadow:0 6px 18px rgba(20,33,61,.06);margin-bottom:14px;overflow:hidden}
-.dh{padding:12px 18px;display:flex;justify-content:space-between;align-items:center;background:var(--hb);border-left:6px solid var(--hc)}
-.dh b{font-size:16px;color:var(--hc)}
-.dh span{font-size:12.5px;color:var(--ink2)}
-.empty{padding:16px 18px;color:#9aa3b2;font-size:13px}
 footer{margin-top:28px;color:#9aa3b2;font-size:12.5px}
-@media(max-width:900px){.people{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}}
+@media(max-width:980px){.people{grid-template-columns:1fr}.pc.wide .blocks{grid-template-columns:1fr 1fr}.kpis{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.pc.wide .blocks{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -69,128 +64,69 @@ footer{margin-top:28px;color:#9aa3b2;font-size:12.5px}
 </div></header>
 <div class="wrap">
  <div class="kpis" id="kpis"></div>
- <div class="ctrl">
-  <div class="seg"><button id="vp"></button><button id="vd"></button></div>
-  <div class="opt"><label><input type="checkbox" id="hide"><span data-t="hide"></span></label><label><input type="checkbox" id="p0"><span data-t="onlyp0"></span></label></div>
- </div>
- <div class="chips" id="chips" style="margin-bottom:14px"></div>
  <div class="note" data-t="note"></div>
- <div id="out"></div>
+ <div class="people" id="out"></div>
  <footer data-t="foot"></footer>
 </div>
 <script>
+// person: id, name, colors, role zh/en, KPIs [[value zh, desc zh, value en, desc en]], blocks [[name zh, name en, [[id, dateKey, zh, en]]]]
+// dateKey: 0 = daily, 1 = trigger, else MMDD
 const PEOPLE=[
- {id:'kc',n:'KC',c:'#dc2626',c2:'#f97316',zh:'总负责 · KOL · 拍板',en:'Owner · KOL · approvals'},
- {id:'marcus',n:'Marcus',c:'#2563eb',c2:'#06b6d4',zh:'付费广告 · 文案 · 周报',en:'Paid ads · copy · weekly report'},
- {id:'trung',n:'Trung',c:'#be185d',c2:'#f472b6',zh:'EDM · SEO 文章',en:'Email · SEO articles'},
- {id:'elian',n:'Elian',c:'#7c3aed',c2:'#a78bfa',zh:'设计统筹 · 素材库',en:'Design lead · asset library'},
- {id:'zach',n:'Zachary',c:'#0f766e',c2:'#10b981',zh:'营销页 · 网站',en:'Landing page · website'},
- {id:'sakura',n:'Sakura',c:'#b45309',c2:'#f5b301',zh:'销售外呼 · KOL 协助',en:'Sales outreach · KOL support'},
- {id:'cs',n:'客服 / Support',c:'#475569',c2:'#94a3b8',zh:'客服团队',en:'Support team'}];
-// [id, owner, dateKey, priority, zh, en]  dateKey: 0 = daily, 1 = trigger, else MMDD
-const TASKS=[
-['k1','kc',1106,0,'拍板：主标语（3 选 1）、营销页结构、各岗位负责人','Decide: headline (1 of 3), landing page structure, owners'],
-['k2','kc',1107,0,'给所有 KOL 发通知 + 素材包 + 每人专属追踪链接','Notify all KOLs with asset kit + a unique tracking link each'],
-['k3','kc',1107,0,'确认促销期间所有 KOL 折扣码停用（11/10 起生效）','Confirm all KOL discount codes are off from 11/10'],
-['k4','kc',1108,0,'设计 3 选 1 定稿审批（7 套）','Approve final designs: pick 1 of 3 for all 7 sets'],
-['k5','kc',1109,0,'营销页上线前最终确认','Final sign-off on the landing page before launch'],
-['k6','kc',1109,1,'确认 Hydra 09 Hybrid 广告口径：Best Seller，不写折扣','Confirm Hydra 09 Hybrid ad message: Best Seller, no discount claim'],
-['k7','kc',0,1,'看清货进度：已售 / 目标','Check clearance progress: sold vs goal'],
-['k8','kc',1,0,'Hydra 07 Pro 卖满 14 台：当天通知网站改价到 $8,999','Hydra 07 Pro hits 14 sold: tell the site to reprice to $8,999 that day'],
-['k9','kc',1130,2,'挑选好的 KOL 视频放到官网','Pick the best KOL videos for the site'],
-['k10','kc',1207,1,'BFCM 活动复盘会（结论写回 craftos）','BFCM post-mortem (findings back into craftos)'],
-['m1','marcus',1107,0,'文案定稿：中英文，每款 1 句卖点 + 1 句紧迫感','Lock copy: EN/ZH, one benefit + one urgency line per product'],
-['m2','marcus',1108,0,'Google / Meta BFCM campaign 结构搭好（先不上线）','Build Google / Meta BFCM campaigns (not live yet)'],
-['m3','marcus',1109,0,'上传广告素材，检查 UTM 和像素事件','Upload creatives; check UTMs and pixel events'],
-['m4','marcus',1110,0,'广告正式上线','Ads go live'],
-['m5','marcus',1110,1,'Google Shopping 打上 Sale 价格标注','Sale price annotations in Google Shopping'],
-['m6','marcus',0,0,'看 ROAS：≥ 8 的组加预算，< 3 的当天关','Check ROAS: scale ad sets ≥ 8, kill < 3 the same day'],
-['m7','marcus',1,0,'Hydra 07 Pro 卖满 14 台：广告素材换成 $8,999 版本','Hydra 07 Pro hits 14 sold: switch creatives to the $8,999 version'],
-['m8','marcus',1117,1,'第 1 周复盘：营收、ROAS、转化率、线索','Week 1 review: revenue, ROAS, CVR, leads'],
-['m9','marcus',1124,1,'第 2 周复盘 + BF/CM 周预算方案','Week 2 review + BF/CM week budget plan'],
-['m10','marcus',1126,0,'感恩节到网一（11/26–30）冲刺：加预算，每天看盘','Thanksgiving–Cyber Monday push (11/26–30): raise budget, check daily'],
-['m11','marcus',1201,1,'12 月延续广告上线（Last Chance / Holiday）','Launch December follow-on ads (Last Chance / Holiday)'],
-['t1','trung',1106,0,'发出"黑五早鸟名单"招募邮件','Send the Black Friday early-access signup email'],
-['t2','trung',1108,0,'SEO 文章 1：年度最大 BFCM 促销推荐','SEO article 1: the biggest BFCM deals of the year'],
-['t3','trung',1108,0,'SEO 文章 2：XRF 38W RF 这个价位可能是最后机会；Hydra 07 Pro (G2) 70W 是目前最强 RF 机型','SEO article 2: XRF 38W RF may be the last chance at this price; Hydra 07 Pro (G2) 70W is the best RF machine today'],
-['t4','trung',1109,1,'SEO 文章 3：Cobra 这次的 deal 实属罕见','SEO article 3: a Cobra deal this good is rare'],
-['t5','trung',1109,0,'BFCM 邮件序列排程：上线 / 每周 / 感恩节 / 黑五 / 网一 / 最后 24 小时','Schedule BFCM emails: launch / weekly / Thanksgiving / Black Friday / Cyber Monday / last 24h'],
-['t6','trung',1109,0,'早鸟名单提前 24 小时开售邮件','Early-access email: SUPER Deals open 24h early'],
-['t7','trung',1109,1,'弃购、浏览弃单流程换成 BFCM 版本','Switch abandoned-cart and browse flows to BFCM versions'],
-['t8','trung',1110,2,'每篇文章改写成 1 封邮件 + 3 条社媒','Turn each article into 1 email + 3 social posts'],
-['t9','trung',1126,0,'感恩节、黑五、网一三个节点邮件按时发出','Thanksgiving, Black Friday and Cyber Monday emails go out on time'],
-['t10','trung',1127,2,'高意向名单加发短信（SMS）','Add SMS to the high-intent list'],
-['e1','elian',1106,0,'发设计需求单：7 套 × 3 方案 + 尺寸清单','Send the design brief: 7 sets × 3 options + size list'],
-['e2','elian',1107,0,'21 张初稿交 KC / Marcus 选','Deliver 21 drafts to KC / Marcus'],
-['e3','elian',1108,0,'7 套定稿全尺寸导出：Meta 1:1 / 4:5 / 9:16、Google 1.91:1、EDM 600px、官网 Banner 桌面 + 手机','Export all 7 final sets: Meta 1:1 / 4:5 / 9:16, Google 1.91:1, email 600px, site banner desktop + mobile'],
-['e4','elian',1108,1,'做"已售 / 剩余"可替换数字的模板','Make templates with swappable "sold / left" numbers'],
-['e5','elian',1108,0,'提前做好 Hydra 07 Pro $8,999 版本素材','Prepare the Hydra 07 Pro $8,999 creatives in advance'],
-['e6','elian',1109,1,'所有素材按规范命名并存入素材库','Name and file every asset in the library'],
-['e7','elian',1128,1,'12 月素材（Last Chance / Holiday）','December creatives (Last Chance / Holiday)'],
-['z1','zach',1107,0,'搭营销页框架 1laser.com/page/BFCM2026（参考竞品）','Build the 1laser.com/page/BFCM2026 frame (modeled on competitors)'],
-['z2','zach',1108,0,'做 SUPER Deal / Deal 两个区 + 真实库存条 + 倒计时','Build SUPER Deal / Deal sections + real stock bars + countdown'],
-['z3','zach',1109,0,'跑完 10 项上线测试清单','Run the 10-point launch QA checklist'],
-['z4','zach',1109,0,'首页 Banner 换成 BFCM 版（11/10 生效）','Swap the homepage banner to BFCM (live 11/10)'],
-['z5','zach',1110,0,'上线后核对价格、库存、运费','After launch, verify prices, stock and shipping'],
-['z6','zach',0,0,'巡检价格和库存；清货型号卖完立即下架','Check prices and stock; delist clearance models when sold out'],
-['z7','zach',1,0,'Hydra 07 Pro 卖满 14 台：当天改价 $8,999','Hydra 07 Pro hits 14 sold: reprice to $8,999 that day'],
-['z8','zach',1201,1,'营销页切换成 12 月版本','Switch the landing page to the December version'],
-['s1','sakura',1107,1,'协助 KC：整理 KOL 名单、分发链接、确认收到','Help KC: KOL list, send links, confirm receipt'],
-['s2','sakura',1108,0,'从 Pipedrive 拉出未跟进和报价未成交的线索清单','Pull unfollowed and unclosed-quote leads from Pipedrive'],
-['s3','sakura',1110,0,'给这些线索发 BFCM 专属跟进邮件并电话跟进','Send those leads a BFCM follow-up email and call them'],
-['s4','sakura',0,1,'高客单 Hydra 客户电话跟进；XRF 主动推 $4,999 套装 B','Call high-ticket Hydra prospects; upsell XRF to the $4,999 Bundle B'],
-['s5','sakura',1124,2,'黑五周加开直播 / 电话预约时段','Add livestream / call slots in Black Friday week'],
-['c1','cs',1109,0,'写好 BFCM FAQ：发货时间（美国现货 vs 在途）、退换、保修','Write the BFCM FAQ: ship times (US stock vs in transit), returns, warranty'],
-['c2','cs',1109,1,'准备标准回复模板；清货型号统一说"卖完即止，不补货"','Prepare reply templates; clearance models are "gone when gone, no restock"'],
-['c3','cs',0,1,'24 小时内回复；每天把高频问题回传给市场','Reply within 24h; send top questions to marketing daily'],
-['c4','cs',1127,0,'黑五当周加强值班，优先处理 BFCM 订单','Extra coverage in Black Friday week; prioritize BFCM orders']];
+{id:'kc',n:'KC',c:'#dc2626',c2:'#f97316',cb:'#fff1ee',wide:true,zh:'总负责 · KOL · CRM · 定价',en:'Owner · KOL · CRM · pricing',
+ kpi:[['$50 万','两个月营收（11/10–12/31）','$500K','Two-month revenue (11/10–12/31)'],['192 台','清货型号全部卖完','192 units','Sell out every clearance unit']],
+ b:[['总负责','Overall',[['k1',1106,'拍板主标语和分工','Decide headline and owners'],['k2',1108,'审批设计定稿','Approve final designs'],['k3',1207,'活动复盘会','Campaign post-mortem']]],
+    ['定价','Pricing',[['k4',1109,'核对官网价格与价格表一致（含两档套装、Hydra 07 Pro 两段价）','Check site prices match the price sheet (bundles, Hydra 07 Pro two-stage)'],['k5',1,'Hydra 07 Pro 卖满 14 台：当天改价 $8,999','Hydra 07 Pro hits 14 sold: reprice to $8,999 that day']]],
+    ['KOL','KOL',[['k6',1107,'通知所有 KOL，发素材和专属追踪链接','Notify all KOLs with assets and a unique tracking link'],['k7',1107,'停用所有 KOL 折扣码（11/10 起）','Turn off all KOL discount codes (from 11/10)']]],
+    ['CRM','CRM',[['k8',1108,'确认 Meta / Google / 网站线索都进 Pipedrive','Confirm Meta / Google / site leads all reach Pipedrive'],['k9',0,'新线索当天分给 Murphy','Assign new leads to Murphy the same day']]]]},
+{id:'marcus',n:'Marcus',c:'#2563eb',c2:'#06b6d4',cb:'#eaf4ff',zh:'付费广告 · 社媒',en:'Paid ads · social media',
+ kpi:[['ROAS ≥ 8','广告回报，低于 3 的广告当天关','ROAS ≥ 8','Ad return; kill anything under 3 the same day'],['≤ 5%','广告费占营收（约 $25,000）','≤ 5%','Ad spend share of revenue (about $25,000)']],
+ b:[['付费广告','Paid ads',[['m1',1109,'Google / Meta BFCM 广告搭好、素材上传','Build Google / Meta BFCM campaigns and upload creatives'],['m2',1110,'广告上线','Ads go live'],['m3',0,'看 ROAS，调预算','Check ROAS, adjust budget']]],
+    ['社媒','Social media',[['m4',1109,'BFCM 社媒内容日历','BFCM social content calendar'],['m5',0,'按日历发帖，24 小时内回复评论','Post on schedule; answer comments within 24h']]]]},
+{id:'trung',n:'Trung',c:'#be185d',c2:'#f472b6',cb:'#fdeef6',zh:'EDM · SEO',en:'Email · SEO',
+ kpi:[['1.5%','订阅率（现在 0.7%）','1.5%','Signup rate (now 0.7%)'],['3 篇','SEO 文章 11/9 前上线','3 articles','SEO articles live by 11/9']],
+ b:[['EDM','Email',[['t1',1106,'发早鸟名单招募邮件','Send the early-access signup email'],['t2',1109,'BFCM 邮件排程：上线 / 感恩节 / 黑五 / 网一 / 最后 24 小时','Schedule BFCM emails: launch / Thanksgiving / Black Friday / Cyber Monday / last 24h'],['t3',1109,'弃购流程换成 BFCM 版','Switch the abandoned-cart flow to BFCM']]],
+    ['SEO','SEO',[['t4',1108,'文章 1：年度最大 BFCM 促销','Article 1: the biggest BFCM deals of the year'],['t5',1108,'文章 2：XRF 38W RF 最后机会 + Hydra 07 Pro 最强 RF','Article 2: XRF 38W RF last chance + Hydra 07 Pro best RF'],['t6',1109,'文章 3：Cobra 罕见 deal','Article 3: a rare Cobra deal']]]]},
+{id:'design',n:'Alex Li · Elian',c:'#7c3aed',c2:'#a78bfa',cb:'#f3edff',zh:'设计 · 网站制作',en:'Design · website build',
+ kpi:[['11/9','设计和营销页按时上线','11/9','Designs and landing page live on time'],['> 0.41%','营销页转化率高于现在的全站水平','> 0.41%','Landing page CVR above today\'s site rate']],
+ b:[['设计','Design',[['d1',1107,'7 套广告图，每套 3 个方案','7 ad sets, 3 options each'],['d2',1108,'定稿并导出全部尺寸','Finalize and export all sizes'],['d3',1108,'提前做 Hydra 07 Pro $8,999 版','Prepare the Hydra 07 Pro $8,999 version']]],
+    ['网站','Website',[['d4',1109,'营销页 /page/BFCM2026 + 库存条 + 倒计时，测试通过','Landing page /page/BFCM2026 + stock bars + countdown, QA passed'],['d5',1109,'首页 Banner 换 BFCM 版','Swap the homepage banner to BFCM'],['d6',0,'巡检价格库存，卖完下架','Check prices and stock; delist when sold out']]]]},
+{id:'murphy',n:'Murphy',c:'#16a34a',c2:'#4ade80',cb:'#ecfbf1',zh:'销售',en:'Sales',
+ kpi:[['$25 万','销售成交营收（目标的一半）','$250K','Sales-closed revenue (half the goal)'],['24 小时','新线索全部在 24 小时内跟进','24 hours','Follow up every new lead within 24h']],
+ b:[['销售','Sales',[['s1',1110,'老线索和报价未成交客户：发 BFCM 邮件并电话跟进','Old leads and unclosed quotes: BFCM email + call'],['s2',0,'新线索 24 小时内跟进','Follow up new leads within 24h'],['s3',0,'XRF 主动推 $4,999 套装 B','Upsell XRF to the $4,999 Bundle B']]]]}];
 const T={
 zh:{tag:'OneLaser · 市场部 · BFCM 2026',h1:'BFCM 2026 <em>市场部待办清单</em>',
-lead:'活动 11/10–11/30，两个月目标 $50 万。每个人该做什么、什么时候做完，都在这里。红色 P0 是最关键的任务，日期在 11/10 之前的必须在上线前全部打勾。',
-k:['全部任务','已完成','P0 未完成','距离上线'],kd:'天',
-vp:'按人看',vd:'按日期看',hide:'隐藏已完成',onlyp0:'只看 P0',all:'全部',
-note:'<b>说明：</b>勾选只保存在你自己的浏览器里，别人看不到你的进度。团队共享进度请在钉钉群或 craftos 里同步。',
-daily:'每天',trig:'触发时',tasks:'项',left:'剩余',none:'没有符合条件的任务',
-foot:'OneLaser 市场部 · BFCM 2026 待办清单。价格以《BFCM 价格策略与清货目标》为准。日期按太平洋时间。'},
+lead:'5 个人，每人 2 个 KPI，每个板块 2–3 件事。活动 11/10–11/30，两个月目标 $50 万。日期在 11/10 之前的，上线前必须做完。',
+k:['负责人','全部任务','已完成','距离上线'],kd:'天',
+note:'<b>说明：</b>勾选只保存在你自己的浏览器里。团队共享进度请在钉钉群或 craftos 里同步。',
+kl:'KPI',daily:'每天',trig:'触发时',
+foot:'OneLaser 市场部 · BFCM 2026。价格以《BFCM 价格策略与清货目标》为准。日期按太平洋时间。'},
 en:{tag:'OneLaser · Marketing · BFCM 2026',h1:'BFCM 2026 <em>Marketing To-Do List</em>',
-lead:'The campaign runs 11/10–11/30 with a $500K two-month goal. What each person does and when it is due is all here. Red P0 items are the critical ones; every one due before 11/10 must be ticked before launch.',
-k:['All tasks','Done','P0 open','Days to launch'],kd:'days',
-vp:'By person',vd:'By date',hide:'Hide done',onlyp0:'P0 only',all:'All',
-note:'<b>Note:</b> ticks are saved only in your own browser — others cannot see your progress. Share team progress in the DingTalk group or craftos.',
-daily:'Daily',trig:'On trigger',tasks:'tasks',left:'left',none:'No tasks match',
-foot:'OneLaser Marketing · BFCM 2026 to-do list. Prices follow the "BFCM Pricing Strategy & Clearance Goals" page. Dates in Pacific time.'}};
-const P=Object.fromEntries(PEOPLE.map(p=>[p.id,p]));
-let L='zh',V='p',F='all',H=false,O=false,D={};
-try{L=localStorage.getItem('todo-lang')||'zh';V=localStorage.getItem('todo-view')||'p';D=JSON.parse(localStorage.getItem('todo-done')||'{}')}catch(e){}
-const save=()=>{try{localStorage.setItem('todo-done',JSON.stringify(D));localStorage.setItem('todo-view',V);localStorage.setItem('todo-lang',L)}catch(e){}};
+lead:'Five people, two KPIs each, 2–3 tasks per area. The campaign runs 11/10–11/30 with a $500K two-month goal. Anything dated before 11/10 must be done before launch.',
+k:['Owners','All tasks','Done','Days to launch'],kd:'days',
+note:'<b>Note:</b> ticks are saved only in your own browser. Share team progress in the DingTalk group or craftos.',
+kl:'KPI',daily:'Daily',trig:'On trigger',
+foot:'OneLaser Marketing · BFCM 2026. Prices follow the "BFCM Pricing Strategy & Clearance Goals" page. Dates in Pacific time.'}};
+let L='zh',D={};
+try{L=localStorage.getItem('todo-lang')||'zh';D=JSON.parse(localStorage.getItem('todo2-done')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('todo2-done',JSON.stringify(D));localStorage.setItem('todo-lang',L)}catch(e){}};
+const ALL=PEOPLE.flatMap(p=>p.b.flatMap(b=>b[2].map(t=>t[0])));
 const dl=k=>k===0?T[L].daily:k===1?T[L].trig:`${Math.floor(k/100)}/${k%100}`;
-const dcol=k=>{if(k<2)return['#ede9fe','#6d28d9'];if(k<=1110)return['#fdecec','#b91c1c'];if(k<=1130)return['#fff1e6','#c2410c'];return['#eef2ff','#4338ca']};
-function row(t,showWho){const p=P[t[1]],x=L==='zh'?t[4]:t[5],[db,df]=dcol(t[2]),dn=!!D[t[0]];
- return `<div class="task ${dn?'done':''}" style="--c:${p.c}" onclick="tg('${t[0]}',event)"><input type="checkbox" ${dn?'checked':''} onclick="event.stopPropagation();tg('${t[0]}')"><div class="t">${x}</div><div class="meta">${showWho?`<span class="who" style="--c:${p.c}">${p.n}</span>`:''}<span class="d" style="--db:${db};--df:${df}">${dl(t[2])}</span><span class="p p${t[3]}">P${t[3]}</span></div></div>`}
-function vis(t){return(F==='all'||t[1]===F)&&(!H||!D[t[0]])&&(!O||t[3]===0)}
+const dcol=k=>k<2?['#ede9fe','#6d28d9']:k<=1110?['#fdecec','#b91c1c']:k<=1130?['#fff1e6','#c2410c']:['#eef2ff','#4338ca'];
 function render(){
  const t=T[L];document.documentElement.lang=L==='zh'?'zh':'en';
  document.querySelectorAll('[data-t]').forEach(e=>e.innerHTML=t[e.dataset.t]);
- bz.className=L==='zh'?'on':'';be.className=L==='en'?'on':'';vp.textContent=t.vp;vd.textContent=t.vd;vp.className=V==='p'?'on':'';vd.className=V==='d'?'on':'';
- hide.checked=H;p0.checked=O;
- const done=TASKS.filter(x=>D[x[0]]).length,p0o=TASKS.filter(x=>x[3]===0&&!D[x[0]]).length,days=Math.max(0,Math.ceil((new Date('2026-11-10T00:00:00-08:00')-new Date())/864e5));
- const kv=[[TASKS.length,'#14213d',null],[done,'#16a34a',done/TASKS.length],[p0o,'#dc2626',null],[days+' '+t.kd,'#ff5a1f',null]];
+ bz.className=L==='zh'?'on':'';be.className=L==='en'?'on':'';
+ const done=ALL.filter(id=>D[id]).length,days=Math.max(0,Math.ceil((new Date('2026-11-10T00:00:00-08:00')-new Date())/864e5));
+ const kv=[[PEOPLE.length,'#14213d',null],[ALL.length,'#2563eb',null],[done,'#16a34a',done/ALL.length],[days+' '+t.kd,'#ff5a1f',null]];
  kpis.innerHTML=kv.map((k,i)=>`<div class="kpi" style="--c:${k[1]}"><div class="v">${k[0]}</div><div class="l">${t.k[i]}</div>${k[2]!==null?`<div class="bar"><i style="width:${k[2]*100}%"></i></div>`:''}</div>`).join('');
- chips.innerHTML=`<button class="chip ${F==='all'?'on':''}" style="--c:#14213d" onclick="setF('all')">${t.all}</button>`+PEOPLE.map(p=>`<button class="chip ${F===p.id?'on':''}" style="--c:${p.c}" onclick="setF('${p.id}')">${p.n}</button>`).join('');
- if(V==='p'){
-  out.innerHTML='<div class="people">'+PEOPLE.filter(p=>F==='all'||F===p.id).map(p=>{const all=TASKS.filter(x=>x[1]===p.id),dn=all.filter(x=>D[x[0]]).length,ts=all.filter(vis).sort((a,b)=>a[2]-b[2]);
-   return `<div class="pc"><div class="ph" style="--c:${p.c};--c2:${p.c2}"><div><div class="n">${p.n}</div><div class="r">${p[L]}</div></div><div class="pg"><b>${dn}/${all.length}</b><div class="bar"><i style="width:${dn/all.length*100}%"></i></div></div></div>${ts.length?ts.map(x=>row(x,false)).join(''):`<div class="empty">${t.none}</div>`}</div>`}).join('')+'</div>';
- }else{
-  const ks=[...new Set(TASKS.filter(vis).map(x=>x[2]))].sort((a,b)=>a-b);
-  out.innerHTML=ks.length?ks.map(k=>{const ts=TASKS.filter(x=>x[2]===k&&vis(x)),[hb,hc]=dcol(k);return `<div class="day"><div class="dh" style="--hb:${hb};--hc:${hc}"><b>${dl(k)}</b><span>${ts.length} ${t.tasks}</span></div>${ts.map(x=>row(x,true)).join('')}</div>`}).join(''):`<div class="day"><div class="empty">${t.none}</div></div>`;
- }
+ out.innerHTML=PEOPLE.map(p=>{const ids=p.b.flatMap(b=>b[2].map(x=>x[0])),dn=ids.filter(id=>D[id]).length;
+  return `<div class="pc ${p.wide?'wide':''}" style="--c:${p.c};--c2:${p.c2};--cb:${p.cb}"><div class="ph"><div><div class="n">${p.n}</div><div class="r">${p[L]}</div></div><div class="pg"><b>${dn}/${ids.length}</b><div class="bar"><i style="width:${dn/ids.length*100}%"></i></div></div></div>
+  <div class="kp"><span class="lb">${t.kl}</span>${p.kpi.map(k=>`<div class="kk"><b>${L==='zh'?k[0]:k[2]}</b><span>${L==='zh'?k[1]:k[3]}</span></div>`).join('')}</div>
+  <div class="blocks">${p.b.map(b=>`<div class="blk"><h4>${L==='zh'?b[0]:b[1]}</h4>${b[2].map(x=>{const[db,df]=dcol(x[1]),d=!!D[x[0]];return `<div class="task ${d?'done':''}" onclick="tg('${x[0]}',event)"><input type="checkbox" ${d?'checked':''} onclick="event.stopPropagation();tg('${x[0]}')"><div class="t">${L==='zh'?x[2]:x[3]}</div><span class="d" style="--db:${db};--df:${df}">${dl(x[1])}</span></div>`}).join('')}</div>`).join('')}</div></div>`}).join('');
  document.title=L==='zh'?'OneLaser BFCM 2026 市场部待办清单':'OneLaser BFCM 2026 Marketing To-Do List';
 }
 function tg(id,ev){if(ev&&ev.target.tagName==='INPUT')return;D[id]=!D[id];if(!D[id])delete D[id];save();render()}
-function setF(f){F=f;render()}
 bz.onclick=()=>{L='zh';save();render()};be.onclick=()=>{L='en';save();render()};
-vp.onclick=()=>{V='p';save();render()};vd.onclick=()=>{V='d';save();render()};
-hide.onchange=e=>{H=e.target.checked;render()};p0.onchange=e=>{O=e.target.checked;render()};
 render();
 </script>
 </body>
