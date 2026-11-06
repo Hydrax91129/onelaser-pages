@@ -105,6 +105,31 @@ td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 .cp .q{font-size:22px;font-weight:900;line-height:1.2}
 .cp .u{font-size:12.5px;opacity:.9;margin-top:10px}
 .note{margin-top:12px;background:#fff7ed;border:2px solid #fed7aa;border-radius:14px;padding:12px 14px;font-size:13.5px;color:#7c2d12}
+
+.tnote{background:#fff7ed;border:2px solid #fed7aa;border-radius:14px;padding:10px 14px;font-size:13px;color:#7c2d12;margin-bottom:14px}
+.tp{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.tpc{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(20,33,61,.07)}
+.tpc.wide{grid-column:1/-1}
+.tph{padding:15px 20px;color:#fff;background:linear-gradient(120deg,var(--c),var(--c2));display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tph .n{font-size:20px;font-weight:900}.tph .r{font-size:13px;opacity:.95}
+.tph .pg{text-align:right;font-size:12.5px;min-width:110px}.tph .pg b{font-size:20px;display:block}
+.tbar{height:8px;background:rgba(255,255,255,.3);border-radius:99px;overflow:hidden;margin-top:6px}.tbar i{display:block;height:100%;background:#fff}
+.tkp{padding:14px 20px;background:var(--cb);display:grid;gap:8px}
+.tkp .lb{font-size:11.5px;font-weight:800;color:var(--c);letter-spacing:.8px}
+.tkk{display:flex;gap:10px;align-items:baseline;background:#fff;border-radius:12px;padding:10px 12px;border-left:5px solid var(--c)}
+.tkk b{font-size:18px;color:var(--c);white-space:nowrap}.tkk span{font-size:13.5px;color:var(--ink2)}
+.tbl{display:grid;grid-template-columns:1fr}
+.tpc.wide .tbl{grid-template-columns:repeat(4,1fr)}
+.tbk{padding:12px 20px 14px;border-top:1px solid var(--line)}
+.tpc.wide .tbk{border-right:1px solid var(--line)}.tpc.wide .tbk:last-child{border-right:0}
+.tbk h4{margin:0 0 6px;font-size:13px;color:var(--c);display:flex;align-items:center;gap:6px}
+.tbk h4:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.ttask{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:start;padding:7px 0;cursor:pointer}
+.ttask input{width:18px;height:18px;margin-top:1px;accent-color:var(--c);cursor:pointer}
+.ttask .t{font-size:14px}.ttask.done .t{text-decoration:line-through;color:#9aa3b2}
+.tdd{font-size:12px;font-weight:800;padding:2px 9px;border-radius:999px;background:var(--db);color:var(--df);white-space:nowrap}
+@media(max-width:980px){.tp{grid-template-columns:1fr}.tpc.wide .tbl{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tpc.wide .tbl{grid-template-columns:1fr}}
 footer{margin-top:30px;color:#9aa3b2;font-size:12.5px}
 @media(max-width:980px){.kpis{grid-template-columns:1fr 1fr}.verdict,.wf,.goal{grid-template-columns:1fr}.ws,.ideas,.copy{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.ws,.ideas,.copy{grid-template-columns:1fr}h1{font-size:28px}}
@@ -119,11 +144,13 @@ footer{margin-top:30px;color:#9aa3b2;font-size:12.5px}
 <div class="wrap">
  <div class="kpis" id="kpis"></div>
 
+ <section><h2 style="--c:#16a34a"><span class="dot"></span><span data-t="s_g"></span></h2><p class="sub" data-t="s_gs"></p><div class="goal" id="goal"></div></section>
+
  <section><h2 style="--c:#0f172a"><span class="dot"></span><span data-t="s_v"></span></h2><p class="sub" data-t="s_vs"></p><div class="verdict" id="verdict"></div></section>
 
  <section><h2 style="--c:#ff5a1f"><span class="dot"></span><span data-t="s_t"></span></h2><p class="sub" data-t="s_ts"></p><div class="tl"><div class="tlg" id="tlg"></div><div class="prep" id="prep"></div></div></section>
 
- <section><h2 style="--c:#2563eb"><span class="dot"></span><span data-t="s_w"></span></h2><p class="sub" data-t="s_ws"></p><div class="ws" id="ws"></div></section>
+ <section id="todo"><h2 style="--c:#2563eb"><span class="dot"></span><span data-t="s_w"></span></h2><p class="sub" data-t="s_ws"></p><div class="tnote" data-t="tnote"></div><div class="tp" id="tp"></div></section>
 
  <section><h2 style="--c:#7c3aed"><span class="dot"></span><span data-t="s_d"></span></h2><p class="sub" data-t="s_ds"></p><div class="card"><table id="dtbl"></table></div></section>
 
@@ -133,25 +160,46 @@ footer{margin-top:30px;color:#9aa3b2;font-size:12.5px}
 
  <section><h2 style="--c:#f59e0b"><span class="dot"></span><span data-t="s_i"></span></h2><p class="sub" data-t="s_is"></p><div class="ideas" id="ideas"></div></section>
 
- <section><h2 style="--c:#16a34a"><span class="dot"></span><span data-t="s_g"></span></h2><p class="sub" data-t="s_gs"></p><div class="goal" id="goal"></div></section>
-
  <footer data-t="foot"></footer>
 </div>
 <script>
+const TP=[
+{id:'kc',n:'KC',c:'#dc2626',c2:'#f97316',cb:'#fff1ee',wide:true,zh:'总负责 · KOL · CRM · 定价',en:'Owner · KOL · CRM · pricing',
+ kpi:[['$100 万','两个月营收冲刺（11/10–12/31）','$1M','Two-month revenue (11/10–12/31)'],['192 台','清货型号全部卖完','192 units','Sell out every clearance unit']],
+ b:[['总负责','Overall',[['k1',1106,'拍板主标语和分工','Decide headline and owners'],['k2',1108,'审批设计定稿','Approve final designs'],['k3',1207,'活动复盘会','Campaign post-mortem']]],
+    ['定价','Pricing',[['k4',1109,'核对官网价格与价格表一致（含两档套装、Hydra 07 Pro 两段价）','Check site prices match the price sheet (bundles, Hydra 07 Pro two-stage)'],['k5',1,'Hydra 07 Pro 卖满 14 台：当天改价 $8,999','Hydra 07 Pro hits 14 sold: reprice to $8,999 that day']]],
+    ['KOL','KOL',[['k6',1107,'通知所有 KOL，发素材和专属追踪链接','Notify all KOLs with assets and a unique tracking link'],['k7',1107,'停用所有 KOL 折扣码（11/10 起）','Turn off all KOL discount codes (from 11/10)']]],
+    ['CRM','CRM',[['k8',1108,'确认 Meta / Google / 网站线索都进 Pipedrive','Confirm Meta / Google / site leads all reach Pipedrive'],['k9',0,'新线索当天分给 Murphy','Assign new leads to Murphy the same day']]]]},
+{id:'marcus',n:'Marcus',c:'#2563eb',c2:'#06b6d4',cb:'#eaf4ff',zh:'付费广告 · 社媒',en:'Paid ads · social media',
+ kpi:[['ROAS ≥ 8','广告回报，低于 3 的广告当天关','ROAS ≥ 8','Ad return; kill anything under 3 the same day'],['≤ 5%','广告费占营收（约 $50,000）','≤ 5%','Ad spend share of revenue (about $50,000)']],
+ b:[['付费广告','Paid ads',[['m1',1109,'Google / Meta BFCM 广告搭好、素材上传','Build Google / Meta BFCM campaigns and upload creatives'],['m2',1110,'广告上线','Ads go live'],['m3',0,'看 ROAS，调预算','Check ROAS, adjust budget']]],
+    ['社媒','Social media',[['m4',1109,'BFCM 社媒内容日历','BFCM social content calendar'],['m5',0,'按日历发帖，24 小时内回复评论','Post on schedule; answer comments within 24h']]]]},
+{id:'trung',n:'Trung',c:'#be185d',c2:'#f472b6',cb:'#fdeef6',zh:'EDM · SEO',en:'Email · SEO',
+ kpi:[['1.5%','订阅率（现在 0.7%）','1.5%','Signup rate (now 0.7%)'],['3 篇','SEO 文章 11/9 前上线','3 articles','SEO articles live by 11/9']],
+ b:[['EDM','Email',[['t1',1106,'发早鸟名单招募邮件','Send the early-access signup email'],['t2',1109,'BFCM 邮件排程：上线 / 感恩节 / 黑五 / 网一 / 最后 24 小时','Schedule BFCM emails: launch / Thanksgiving / Black Friday / Cyber Monday / last 24h'],['t3',1109,'弃购流程换成 BFCM 版','Switch the abandoned-cart flow to BFCM']]],
+    ['SEO','SEO',[['t4',1108,'文章 1：年度最大 BFCM 促销','Article 1: the biggest BFCM deals of the year'],['t5',1108,'文章 2：XRF 38W RF 最后机会 + Hydra 07 Pro 最强 RF','Article 2: XRF 38W RF last chance + Hydra 07 Pro best RF'],['t6',1109,'文章 3：Cobra 罕见 deal','Article 3: a rare Cobra deal']]]]},
+{id:'design',n:'Alex Li · Elian',c:'#7c3aed',c2:'#a78bfa',cb:'#f3edff',zh:'设计 · 网站制作',en:'Design · website build',
+ kpi:[['11/9','设计和营销页按时上线','11/9','Designs and landing page live on time'],['> 0.41%','营销页转化率高于现在的全站水平','> 0.41%','Landing page CVR above today\'s site rate']],
+ b:[['设计','Design',[['d1',1107,'7 套广告图，每套 3 个方案','7 ad sets, 3 options each'],['d2',1108,'定稿并导出全部尺寸','Finalize and export all sizes'],['d3',1108,'提前做 Hydra 07 Pro $8,999 版','Prepare the Hydra 07 Pro $8,999 version']]],
+    ['网站','Website',[['d4',1109,'营销页 /page/BFCM2026 + 库存条 + 倒计时，测试通过','Landing page /page/BFCM2026 + stock bars + countdown, QA passed'],['d5',1109,'首页 Banner 换 BFCM 版','Swap the homepage banner to BFCM'],['d6',0,'巡检价格库存，卖完下架','Check prices and stock; delist when sold out']]]]},
+{id:'murphy',n:'Murphy',c:'#16a34a',c2:'#4ade80',cb:'#ecfbf1',zh:'销售',en:'Sales',
+ kpi:[['$50 万','销售成交营收（目标的一半）','$500K','Sales-closed revenue (half the goal)'],['24 小时','新线索全部在 24 小时内跟进','24 hours','Follow up every new lead within 24h']],
+ b:[['销售','Sales',[['s1',1110,'老线索和报价未成交客户：发 BFCM 邮件并电话跟进','Old leads and unclosed quotes: BFCM email + call'],['s2',0,'新线索 24 小时内跟进','Follow up new leads within 24h'],['s3',0,'XRF 主动推 $4,999 套装 B','Upsell XRF to the $4,999 Bundle B']]]]}];
+let TD={};try{TD=JSON.parse(localStorage.getItem('todo2-done')||'{}')}catch(e){}
 const LAUNCH=new Date('2026-11-10T00:00:00-08:00'),END=new Date('2026-11-30T23:59:00-08:00');
 const T={
 zh:{tag:'OneLaser · 市场部 · BFCM 2026 作战计划',h1:'BFCM 2026<br><em>年度最大促销</em>营销作战计划',
-lead:'活动 11 月 10 日–30 日，两个月营收目标冲 $100 万。整体安排方向是对的：价格已定、分工清楚、KOL 改为链接引流也更公平。最大的问题是时间——离上线只剩几天，7 套设计 × 3 个方案 + 营销页 + 测试要压缩完成。下面是我的评估、时间线、分工和 10 个新增玩法。',
+lead:'活动 11 月 10 日–30 日，两个月营收目标冲 $100 万。整体安排方向是对的：价格已定、分工清楚、KOL 改为链接引流也更公平。最大的问题是时间——离上线只剩几天，7 套设计 × 3 个方案 + 营销页 + 测试要压缩完成。下面是目标拆解、风险、时间线、每个人的 KPI 和待办，以及 10 个新玩法。',
 k:['距离上线','活动天数','两个月营收目标','建议广告预算（5%）'],ku:['天','天','',''],
 s_v:'我的评估',s_vs:'左边是这套安排做得好的地方，右边是上线前必须补上的风险。',
 good:'做得好的',risk:'必须补的风险',
 g:[['价格先定、再做营销','价格已锁定，设计和文案可以一次做对，不返工。'],['分层清楚','SUPER Deal（限时限量）和 Deal（限时）两档，和价格策略一致。'],['KOL 改为链接','促销期停用所有 KOL 折扣码，避免叠加折扣、保护利润，佣金照样能追踪。'],['内容覆盖全','广告、EDM、SEO、KOL、官网五路同时打，产品线和品牌都有素材。']],
-r:[['时间极紧','离 11/10 上线只剩 3–4 天：7 套广告图 × 3 方案 + Banner + 营销页 + 测试，只有约 3 个工作日。建议设计今晚就开工，11/8 定稿。'],['Hydra 09 Hybrid 没有黑五价','它不参加黑五、保持原价。广告不能写成"黑五折扣"，要打"Best Seller / 现货 / 分期"——否则价格页和广告对不上，客诉和合规风险。'],['库存紧迫感必须真实','只能用真实库存数（我们本来就真的少），不能写假的"仅剩 3 台"。美国现货只有 45 台，在途的要标"预计 X 日发货"。'],['人手集中在 Trung 和 Marcus','EDM + SEO 都在 Trung；设计、网站、销售外呼没有写负责人。需要指定。'],['SEO 文章时效','文章要在 11/10 前发布才来得及被收录；同时用作 EDM 和社媒内容，一稿三用。']],
+r:[['时间极紧','离 11/10 上线只剩 3–4 天：7 套广告图 × 3 方案 + Banner + 营销页 + 测试，只有约 3 个工作日。建议设计今晚就开工，11/8 定稿。'],['Hydra 09 Hybrid 没有黑五价','它不参加黑五、保持原价。广告不能写成"黑五折扣"，要打"Best Seller / 现货 / 分期"——否则价格页和广告对不上，客诉和合规风险。'],['库存紧迫感必须真实','只能用真实库存数（我们本来就真的少），不能写假的"仅剩 3 台"。美国现货只有 45 台，在途的要标"预计 X 日发货"。'],['货是最大瓶颈','$100 万要卖掉黑五库存约 65%，但美国现货只有 45 台。XRF 在途 52 台、VertiGo 在途 24 台的到港时间这周必须确定。'],['SEO 文章时效','文章要在 11/10 前发布才来得及被收录；同时用作 EDM 和社媒内容，一稿三用。']],
 s_t:'时间线',s_ts:'今天到 12 月底。红色虚线 = 今天。感恩节 11/26、黑五 11/27、网一 11/30 是三个高峰。',
 ph:[['准备 · 早鸟名单',0,4,'#64748b'],['主促期',4,20,'#ff5a1f'],['BF/CM 高峰',20,24,'#dc2626'],['12 月：清货延续 + 节日',24,56,'#7c3aed']],
 ms:[[0,'11/6','开工',0],[4,'11/10','正式上线',1],[11,'11/17','第 1 周复盘',0],[20.5,'11/26–27','感恩节 · 黑五',1],[24,'11/30','网一 · 活动结束',0],[49,'12/25','圣诞',1],[55,'12/31','两个月收官',0]],prep:['<b>11/6</b> 定方案 · 设计开工 · 早鸟名单上线','<b>11/7</b> 文案定稿 · KOL 通知 + 链接','<b>11/8</b> 设计 3 选 1 定稿','<b>11/9</b> 营销页测试 · SEO 文章发布','<b>11/10</b> 全渠道上线'],
 today:'今天',
-s_w:'分工与交付',s_ws:'黑字是你已经安排的，紫色"+"是我建议补充的。',
+s_w:'分工、KPI 与待办',s_ws:'5 个人，每人 2 个 KPI，每个板块 2–3 件事。日期在 11/10 之前的，上线前必须做完。',tnote:'<b>说明：</b>勾选只保存在你自己的浏览器里。团队共享进度请在钉钉群或 craftos 里同步。',kl:'KPI',daily:'每天',trig:'触发时',
 ws:[['文案','待定（建议 Marcus 定稿）','#db2777','#f472b6',['主标语：Best Deal of Laser in 2026（见下方优化建议）','两档文案：SUPER Deal · Limited Time · Limited Stock / Deal · Limited Time'],['每款产品 1 句核心卖点 + 1 句紧迫感，所有渠道共用','12 月延续文案：Last Chance / Holiday Maker'],'11/7','统一信息'],
 ['设计','待定（Elian 统筹素材）','#7c3aed','#a78bfa',['XRF、Hydra 07 Pro、Hydra 09 Hybrid、VertiGo、Cobra 广告图组各一套','品牌 BFCM 全产品线一套','官网 Banner 一套（要酷）','每套出 3 个方案选 1'],['每套含 Meta 1:1 / 4:5 / 9:16、Google 横版、EDM 头图','"已售 / 剩余"可替换数字的模板，方便每天更新'],'11/8','7 套定稿'],
 ['网站','Zachary + 网站运营','#0f766e','#10b981',['上线 1laser.com/page/BFCM2026，参考竞品','SUPER Deal（限时限量）和 Deal（限时）两个区','所有库存显示紧迫感','上线前完整测试'],['真实库存条 + 倒计时（见创新 02）','移动端优先：先看手机版','GA4 事件：页面浏览、加购、结账'],'11/9','页面通过测试'],
@@ -190,17 +238,17 @@ pc:[['11/10–11/22 主促期',30,'#f59e0b'],['11/23–11/30 BF/CM 周',30,'#dc2
 lv:[['广告预算（5%）','约 $50,000'],['ROAS 目标','≥ 8（广告带来约 $40 万）'],['其余约 $60 万来自','EDM、老线索、KOL、自然流量、销售成交'],['黑五全部库存 246 台','≈ $155 万；$100 万要卖掉约 65%'],['最大瓶颈','美国现货只有 45 台，在途和国内的货必须按时到']],
 foot:'OneLaser 市场部 · BFCM 2026。价格与库存以《BFCM 价格策略与清货目标》为准；本页只讲营销安排。日期按太平洋时间。'},
 en:{tag:'OneLaser · Marketing · BFCM 2026 battle plan',h1:'BFCM 2026<br><em>Biggest Sale of the Year</em> Marketing Plan',
-lead:'The campaign runs Nov 10–30 with a $1M two-month revenue goal. The plan points the right way: prices are locked, roles are clear, and moving KOLs to links is fairer. The biggest problem is time — only days remain to launch, so 7 ad sets × 3 options + the landing page + testing must be compressed. Below: my assessment, the timeline, owners and 10 new ideas.',
+lead:'The campaign runs Nov 10–30 with a $1M two-month revenue goal. The plan points the right way: prices are locked, roles are clear, and moving KOLs to links is fairer. The biggest problem is time — only days remain to launch, so 7 ad sets × 3 options + the landing page + testing must be compressed. Below: the goal breakdown, risks, timeline, each person\'s KPIs and to-dos, and 10 new ideas.',
 k:['Days to launch','Campaign days','Two-month revenue goal','Suggested ad budget (5%)'],ku:['days','days','',''],
 s_v:'My assessment',s_vs:'Left: what this plan gets right. Right: risks to close before launch.',
 good:'What works',risk:'Risks to close',
 g:[['Price first, then marketing','Prices are locked, so design and copy can be done right once with no rework.'],['Clear tiers','SUPER Deal (limited time + stock) and Deal (limited time) match the pricing strategy.'],['KOLs move to links','All KOL codes are off during the sale — no stacked discounts, margin protected, commissions still tracked.'],['Full coverage','Ads, email, SEO, KOLs and the site fire together, with assets for products and brand.']],
-r:[['Very tight timing','Launch on 11/10 is 3–4 days away: 7 ad sets × 3 options + banner + page + testing in about 3 working days. Start design tonight and lock it on 11/8.'],['Hydra 09 Hybrid has no BF price','It sits out Black Friday at full price. Ads must not say "Black Friday discount" — lead with Best Seller / in stock / financing, or ads and the price page will not match.'],['Scarcity must be real','Use only real stock counts (ours genuinely are low) — never a fake "only 3 left". Only 45 units are in the US; in-transit stock must show "ships by X".'],['Load sits on Trung and Marcus','Email + SEO are both Trung; design, website and sales outreach have no owner. Assign them.'],['SEO timing','Articles must be live before 11/10 to be indexed; reuse each as email and social content.']],
+r:[['Very tight timing','Launch on 11/10 is 3–4 days away: 7 ad sets × 3 options + banner + page + testing in about 3 working days. Start design tonight and lock it on 11/8.'],['Hydra 09 Hybrid has no BF price','It sits out Black Friday at full price. Ads must not say "Black Friday discount" — lead with Best Seller / in stock / financing, or ads and the price page will not match.'],['Scarcity must be real','Use only real stock counts (ours genuinely are low) — never a fake "only 3 left". Only 45 units are in the US; in-transit stock must show "ships by X".'],['Stock is the bottleneck','$1M means selling about 65% of BF stock, but only 45 units are in the US. Lock ETAs for the 52 XRF and 24 VertiGo units in transit this week.'],['SEO timing','Articles must be live before 11/10 to be indexed; reuse each as email and social content.']],
 s_t:'Timeline',s_ts:'Today through end of December. Red dashed line = today. Thanksgiving 11/26, Black Friday 11/27 and Cyber Monday 11/30 are the three peaks.',
 ph:[['Prep · early access',0,4,'#64748b'],['Main promo',4,20,'#ff5a1f'],['BF/CM peak',20,24,'#dc2626'],['December: clearance + holiday',24,56,'#7c3aed']],
 ms:[[0,'11/6','Start',0],[4,'11/10','Launch',1],[11,'11/17','Week 1 review',0],[20.5,'11/26–27','Thanksgiving · Black Friday',1],[24,'11/30','Cyber Monday · end',0],[49,'12/25','Christmas',1],[55,'12/31','Two-month close',0]],prep:['<b>11/6</b> Decide · start design · open early-access list','<b>11/7</b> Copy locked · KOL notice + links','<b>11/8</b> Design: pick 1 of 3','<b>11/9</b> Page QA · SEO articles live','<b>11/10</b> All channels live'],
 today:'Today',
-s_w:'Owners and deliverables',s_ws:'Black = what you assigned; purple "+" = what I suggest adding.',
+s_w:'Owners, KPIs and to-dos',s_ws:'Five people, two KPIs each, 2–3 tasks per area. Anything dated before 11/10 must be done before launch.',tnote:'<b>Note:</b> ticks are saved only in your own browser. Share team progress in the DingTalk group or craftos.',kl:'KPI',daily:'Daily',trig:'On trigger',
 ws:[['Copy','TBD (Marcus to sign off)','#db2777','#f472b6',['Headline: Best Deal of Laser in 2026 (see copy fixes below)','Two tiers: SUPER Deal · Limited Time · Limited Stock / Deal · Limited Time'],['One core benefit + one urgency line per product, shared by every channel','December follow-on copy: Last Chance / Holiday Maker'],'11/7','One message'],
 ['Design','TBD (Elian runs assets)','#7c3aed','#a78bfa',['Ad sets for XRF, Hydra 07 Pro, Hydra 09 Hybrid, VertiGo and Cobra','One brand BFCM full-line set','Site banner (make it cool)','3 options per set, pick 1'],['Each set: Meta 1:1 / 4:5 / 9:16, Google landscape, email header','Templates with swappable "sold / left" numbers for daily updates'],'11/8','7 sets locked'],
 ['Website','Zachary + website ops','#0f766e','#10b981',['Launch 1laser.com/page/BFCM2026, modeled on competitors','SUPER Deal (limited time + stock) and Deal (limited time) sections','Scarcity on every stock count','Full test before launch'],['Real stock bars + countdown (idea 02)','Mobile first','GA4 events: page view, add to cart, checkout'],'11/9','Page passes QA'],
@@ -253,7 +301,8 @@ function render(){
  const start=new Date('2026-11-06T00:00:00-08:00'),td=(now-start)/864e5;
  tlg.innerHTML=`<div class="tlax"></div>`+t.ph.map(p=>`<div class="ph" style="left:${x(p[1])}%;width:calc(${x(p[2])-x(p[1])}% - 3px);background:${p[3]}">${p[0]}</div>`).join('')+t.ms.map(m=>{const c=m[0]>=20&&m[0]<=24?'#dc2626':m[0]===4?'#ff5a1f':'#475569';return `<div class="ms" style="left:${x(m[0])}%;--c:${c}"><div class="pin"></div><div class="lb ${m[3]?'up':'dn'}"><div class="d">${m[1]}</div><div class="n">${m[2]}</div></div></div>`}).join('')+(td>=0&&td<=D?`<div class="today" style="left:${x(td)}%"><span>${t.today}</span></div>`:'');
  prep.innerHTML=t.prep.map(s=>`<span>${s}</span>`).join('');
- ws.innerHTML=t.ws.map(w=>`<div class="w" style="--c:${w[2]};--c2:${w[3]}"><div class="hd"><div class="t">${w[0]}${w[4].length?'':`<span class="new">${L==='zh'?'新增':'New'}</span>`}</div><div class="o">${t.owner}：${w[1]}</div></div><ul>${w[4].map(s=>`<li>${s}</li>`).join('')}${w[5].map(s=>`<li class="add">${s}</li>`).join('')}</ul><div class="ft"><span>${t.due} <b>${w[6]}</b></span><span>${t.kpi} <b>${w[7]}</b></span></div></div>`).join('');
+ {const dl=k=>k===0?t.daily:k===1?t.trig:`${Math.floor(k/100)}/${k%100}`,dc=k=>k<2?['#ede9fe','#6d28d9']:k<=1110?['#fdecec','#b91c1c']:k<=1130?['#fff1e6','#c2410c']:['#eef2ff','#4338ca'];
+ tp.innerHTML=TP.map(p=>{const ids=p.b.flatMap(b=>b[2].map(x=>x[0])),dn=ids.filter(id=>TD[id]).length;return `<div class="tpc ${p.wide?'wide':''}" style="--c:${p.c};--c2:${p.c2};--cb:${p.cb}"><div class="tph"><div><div class="n">${p.n}</div><div class="r">${p[L]}</div></div><div class="pg"><b>${dn}/${ids.length}</b><div class="tbar"><i style="width:${dn/ids.length*100}%"></i></div></div></div><div class="tkp"><span class="lb">${t.kl}</span>${p.kpi.map(k=>`<div class="tkk"><b>${L==='zh'?k[0]:k[2]}</b><span>${L==='zh'?k[1]:k[3]}</span></div>`).join('')}</div><div class="tbl">${p.b.map(b=>`<div class="tbk"><h4>${L==='zh'?b[0]:b[1]}</h4>${b[2].map(x=>{const[db,df]=dc(x[1]),d=!!TD[x[0]];return `<div class="ttask ${d?'done':''}" onclick="ttg('${x[0]}',event)"><input type="checkbox" ${d?'checked':''} onclick="event.stopPropagation();ttg('${x[0]}')"><div class="t">${L==='zh'?x[2]:x[3]}</div><span class="tdd" style="--db:${db};--df:${df}">${dl(x[1])}</span></div>`}).join('')}</div>`).join('')}</div></div>`}).join('');}
  const pc=['#ff5a1f','#9333ea','#0f766e','#ca8a04','#2563eb','#0b1026','#db2777'];
  dtbl.innerHTML='<thead><tr>'+t.dth.map(h=>`<th>${h}</th>`).join('')+'</tr></thead><tbody>'+t.d.map((r,i)=>`<tr><td><b style="color:${pc[i]}">${r[0]}</b></td><td>${r[1]}</td><td>${(i===6?t.sizes.slice(5):t.sizes.slice(0,5)).map(s=>`<span class="pill" style="--b:#eef2ff;--f:#3730a3">${s}</span>`).join('')}</td><td><span class="pill" style="--b:#fff6e5;--f:#b45309">${t.st}</span></td></tr>`).join('')+'</tbody>';
  page.innerHTML=t.pg.map((b,i)=>`<div class="blk" style="--c:${b[2]}"><b>${i+1}. ${b[0]}</b><span>${b[1]}</span></div>`).join('');
@@ -264,6 +313,7 @@ function render(){
  goal.innerHTML=`<div class="gbox"><h3>${t.pace}</h3><div class="pace">${t.pc.map(p=>`<div class="pr" style="--c:${p[2]}"><span>${p[0]}</span><div class="tr"><i style="width:${p[1]/40*100}%"></i></div><b>$${p[1]*10}K</b></div>`).join('')}</div></div><div class="gbox"><h3>${t.lev}</h3>${t.lv.map(v=>`<div class="lever" style="--c:#16a34a"><span>${v[0]}</span><b>${v[1]}</b></div>`).join('')}</div>`;
  document.title=L==='zh'?'OneLaser BFCM 2026 营销作战计划':'OneLaser BFCM 2026 Marketing Plan';
 }
+function ttg(id,ev){if(ev&&ev.target.tagName==='INPUT')return;TD[id]=!TD[id];if(!TD[id])delete TD[id];try{localStorage.setItem('todo2-done',JSON.stringify(TD))}catch(e){}render()}
 function tick(i,v){QA[i]=v;try{localStorage.setItem('bfm-qa',JSON.stringify(QA))}catch(e){}render()}
 function setL(l){L=l;try{localStorage.setItem('bfm-lang',l)}catch(e){}render()}
 bz.onclick=()=>setL('zh');be.onclick=()=>setL('en');render();

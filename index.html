@@ -9,7 +9,7 @@ header{background:linear-gradient(120deg,#0b1026,#1b2a6b 55%,#ff5a1f 140%);color
 .lang button{border:0;background:transparent;color:#fff;padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:600}
 .lang button.on{background:#fff;color:#14213d}
 h1{font-size:34px;margin:18px 0 6px}p.l{opacity:.9;margin:0}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:-56px;padding:0 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-56px;padding:0 20px}
 a.c{display:block;background:#fff;border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 10px 26px rgba(20,33,61,.1);transition:transform .15s}
 a.c:hover{transform:translateY(-3px)}
 a.c .b{height:90px;background:var(--g);display:flex;align-items:flex-end;padding:12px 16px;color:#fff;font-weight:800;font-size:13px;letter-spacing:1px}
@@ -23,9 +23,9 @@ footer{max-width:1000px;margin:30px auto;padding:0 20px;color:#9aa3b2;font-size:
 <div class="wrap"><div class="grid" id="g"></div></div>
 <footer data-t="f"></footer>
 <script>
-const P=[['bfcm-todo/','linear-gradient(135deg,#dc2626,#f59e0b)','TO-DO'],['bfcm-plan/','linear-gradient(135deg,#05060f,#ff5a1f)','BFCM 2026'],['bfcm-pricing/','linear-gradient(135deg,#1b2a6b,#ff8a3d)','BFCM 2026'],['marketing-roles/','linear-gradient(135deg,#4338ca,#7c3aed)','MARKETING']];
-const T={zh:{h:'OneLaser 团队页面',l:'市场与活动资料，随时更新，刷新即是最新版。',n:[['BFCM 市场部待办清单','5 个人，每人 2 个 KPI，每个板块 2–3 件事，可勾选。'],['BFCM 营销作战计划','活动时间线、分工、设计交付、营销页结构和 10 个创新玩法。'],['BFCM 价格策略与清货目标','价格分层、利润规则、清货优先级和各团队动作。'],['市场部岗位职责','9 个岗位每天、每周、每月要做的事和 KPI。']],f:'OneLaser · Make Better With One'},
-en:{h:'OneLaser Team Pages',l:'Marketing and campaign materials — always up to date; refresh for the latest.',n:[['BFCM Marketing To-Do List','Five people, two KPIs each, 2–3 tasks per area — tick as you go.'],['BFCM Marketing Battle Plan','Timeline, owners, design deliverables, landing page structure and 10 new ideas.'],['BFCM Pricing Strategy & Clearance Goals','Price tiers, margin rules, clearance priorities and team actions.'],['Marketing Roles & Responsibilities','Daily, weekly and monthly tasks and KPIs for 9 roles.']],f:'OneLaser · Make Better With One'}};
+const P=[['bfcm-plan/','linear-gradient(135deg,#05060f,#ff5a1f)','BFCM 2026'],['bfcm-pricing/','linear-gradient(135deg,#1b2a6b,#ff8a3d)','BFCM 2026'],['marketing-roles/','linear-gradient(135deg,#4338ca,#7c3aed)','MARKETING']];
+const T={zh:{h:'OneLaser 团队页面',l:'市场与活动资料，随时更新，刷新即是最新版。',n:[['BFCM 营销作战计划 + 待办','目标 $100 万拆解、时间线、每个人的 KPI 和待办、营销页、10 个创新玩法。'],['BFCM 价格策略与清货目标','价格分层、利润规则、清货优先级和各团队动作。'],['市场部岗位职责','9 个岗位每天、每周、每月要做的事和 KPI。']],f:'OneLaser · Make Better With One'},
+en:{h:'OneLaser Team Pages',l:'Marketing and campaign materials — always up to date; refresh for the latest.',n:[['BFCM Marketing Plan + To-Dos','The $1M goal breakdown, timeline, each person\'s KPIs and to-dos, landing page and 10 new ideas.'],['BFCM Pricing Strategy & Clearance Goals','Price tiers, margin rules, clearance priorities and team actions.'],['Marketing Roles & Responsibilities','Daily, weekly and monthly tasks and KPIs for 9 roles.']],f:'OneLaser · Make Better With One'}};
 let L='zh';try{L=localStorage.getItem('pages-lang')||'zh'}catch(e){}
 function r(){const t=T[L];document.querySelectorAll('[data-t]').forEach(e=>e.innerHTML=t[e.dataset.t]);bz.className=L==='zh'?'on':'';be.className=L==='en'?'on':'';
 g.innerHTML=P.map((p,i)=>`<a class="c" href="${p[0]}"><div class="b" style="--g:${p[1]}">${p[2]}</div><div class="t">${t.n[i][0]}</div><div class="d">${t.n[i][1]}</div></a>`).join('');}
