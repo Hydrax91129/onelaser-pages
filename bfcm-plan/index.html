@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneLaser BFCM 2026 营销作战计划</title>
+<style>
+:root{--ink:#14213d;--ink2:#4a5568;--line:#e6e9f0;--bg:#f4f5fb;--good:#16a34a;--warn:#d97706;--bad:#dc2626}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px 60px}
+header{background:#05060f;color:#fff;padding:30px 0 96px;position:relative;overflow:hidden}
+header:before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 10%,rgba(255,90,31,.55),transparent 70%),radial-gradient(500px 300px at 10% 100%,rgba(124,58,237,.45),transparent 70%),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 60px)}
+.top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.tag{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:4px 12px;border-radius:999px;font-size:13px}
+.lang{display:flex;background:rgba(255,255,255,.12);border-radius:999px;padding:3px}
+.lang button{border:0;background:transparent;color:#fff;padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:600;font-size:13px}
+.lang button.on{background:#fff;color:var(--ink)}
+.kick{position:relative;z-index:1;margin-top:22px;font-size:13px;letter-spacing:3px;color:#ffb38a;font-weight:700}
+h1{font-size:40px;line-height:1.15;margin:8px 0 10px;position:relative;z-index:1;font-weight:900}
+h1 em{font-style:normal;background:linear-gradient(90deg,#ffd166,#ff5a1f,#ff2d55);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:900px;margin:0;opacity:.9;position:relative;z-index:1;font-size:15.5px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-62px;position:relative;z-index:2}
+.kpi{background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 10px 26px rgba(20,33,61,.1);border-top:4px solid var(--c)}
+.kpi .v{font-size:28px;font-weight:900;color:var(--c)}
+.kpi .l{font-size:12.5px;color:var(--ink2)}
+section{margin-top:38px}
+h2{font-size:22px;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+h2 .dot{width:10px;height:26px;border-radius:4px;background:var(--c)}
+.sub{color:var(--ink2);margin:0 0 16px;font-size:14px}
+.verdict{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vc{background:#fff;border-radius:18px;padding:18px;box-shadow:0 6px 18px rgba(20,33,61,.06);border-top:6px solid var(--c)}
+.vc h3{margin:0 0 10px;color:var(--c);font-size:16px}
+.vc .it{display:flex;gap:10px;margin:10px 0}
+.vc .it .ic{flex:none;width:24px;height:24px;border-radius:50%;background:var(--c);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.vc .it b{display:block;font-size:14px}
+.vc .it span{font-size:13.5px;color:var(--ink2)}
+.tl{background:#fff;border-radius:20px;padding:22px 20px 18px;box-shadow:0 6px 18px rgba(20,33,61,.06);overflow-x:auto}
+.tlg{position:relative;min-width:900px;height:240px;margin:0 30px}
+.tlax{position:absolute;left:0;right:0;top:118px;height:4px;background:#e6e9f0;border-radius:4px}
+.ph{position:absolute;top:196px;height:40px;border-radius:10px;color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;padding:0 8px;text-align:center;line-height:1.2}
+.ms{position:absolute;top:111px;transform:translateX(-50%);width:18px;height:18px}
+.ms .pin{width:18px;height:18px;border-radius:50%;border:4px solid #fff;box-shadow:0 0 0 2px var(--c);background:var(--c)}
+.ms .lb{position:absolute;left:50%;transform:translateX(-50%);width:130px;text-align:center}
+.ms .lb.up{bottom:26px}.ms .lb.dn{top:26px}
+.ms .d{font-weight:800;font-size:13px;color:var(--c)}
+.ms .n{font-size:12px;color:var(--ink2)}
+.prep{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.prep span{background:#f1f5f9;border-radius:10px;padding:6px 10px;font-size:12.5px}
+.prep b{color:#ff5a1f}
+.today{position:absolute;top:0;bottom:0;width:0;border-left:2px dashed #dc2626}
+.today span{position:absolute;bottom:0;left:4px;font-size:11px;color:#dc2626;font-weight:800;white-space:nowrap}
+.ws{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.w{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(20,33,61,.06);display:flex;flex-direction:column}
+.w .hd{padding:14px 16px;color:#fff;background:linear-gradient(120deg,var(--c),var(--c2))}
+.w .hd .t{font-weight:800;font-size:16px}
+.w .hd .o{font-size:12.5px;opacity:.95;margin-top:2px}
+.w .new{display:inline-block;background:#fff;color:var(--c);font-size:11px;font-weight:800;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.w ul{margin:0;padding:12px 16px 4px 32px;font-size:13.5px;flex:1}
+.w li{margin:5px 0}
+.w li.add{color:#7c3aed}
+.w li.add:before{content:"+ ";font-weight:800}
+.w .ft{padding:10px 16px;border-top:1px solid var(--line);background:#fafbfe;font-size:12.5px;color:var(--ink2);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.w .ft b{color:var(--c)}
+.card{background:#fff;border-radius:18px;box-shadow:0 6px 20px rgba(20,33,61,.06);padding:6px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{font-size:12px;color:var(--ink2);padding:12px 10px;border-bottom:2px solid var(--line);font-weight:700;text-align:left;white-space:nowrap}
+td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:2px 9px;margin:2px 4px 2px 0;background:var(--b);color:var(--f)}
+.wf{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.page{background:#fff;border-radius:18px;box-shadow:0 6px 18px rgba(20,33,61,.06);padding:14px}
+.blk{border-radius:12px;padding:10px 14px;margin-bottom:8px;color:#fff;background:var(--c);display:flex;justify-content:space-between;gap:10px;align-items:center}
+.blk b{font-size:14px}
+.blk span{font-size:12px;opacity:.92;text-align:right}
+.blk.lt{background:var(--cb);color:var(--c);border:2px dashed var(--c)}
+.qa{background:#fff;border-radius:18px;box-shadow:0 6px 18px rgba(20,33,61,.06);padding:16px 18px}
+.qa h3{margin:0 0 8px;font-size:15.5px;color:#0f766e}
+.qa label{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;margin:7px 0;cursor:pointer}
+.qa input{margin-top:3px;accent-color:#0f766e}
+.qa .bar{height:8px;background:#eef0f4;border-radius:99px;overflow:hidden;margin:6px 0 10px}
+.qa .bar i{display:block;height:100%;background:#0f766e;width:0}
+.ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.idea{background:#fff;border-radius:18px;padding:16px;box-shadow:0 6px 18px rgba(20,33,61,.06);position:relative;overflow:hidden}
+.idea:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
+.idea .no{font-size:12px;font-weight:800;color:var(--c);letter-spacing:1px}
+.idea h3{margin:2px 0 6px;font-size:16px}
+.idea p{margin:0 0 10px;font-size:13.5px;color:var(--ink2)}
+.meter{display:flex;gap:14px;font-size:12px;color:var(--ink2)}
+.dots{display:inline-flex;gap:3px;vertical-align:-1px;margin-left:4px}
+.dots i{width:9px;height:9px;border-radius:50%;background:#e6e9f0}
+.dots i.on{background:var(--c)}
+.goal{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gbox{background:#fff;border-radius:18px;padding:18px;box-shadow:0 6px 18px rgba(20,33,61,.06)}
+.gbox h3{margin:0 0 10px;font-size:15.5px}
+.pace{display:grid;gap:8px}
+.pr{display:grid;grid-template-columns:150px 1fr 80px;gap:10px;align-items:center;font-size:13px}
+.pr .tr{height:18px;background:#f1f3f7;border-radius:6px;overflow:hidden}
+.pr .tr i{display:block;height:100%;background:var(--c);border-radius:6px}
+.pr b{text-align:right}
+.lever{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.lever:last-child{border-bottom:0}
+.lever b{color:var(--c)}
+.copy{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cp{border-radius:18px;padding:20px;color:#fff;background:var(--g);min-height:150px;display:flex;flex-direction:column;justify-content:space-between}
+.cp .q{font-size:22px;font-weight:900;line-height:1.2}
+.cp .u{font-size:12.5px;opacity:.9;margin-top:10px}
+.note{margin-top:12px;background:#fff7ed;border:2px solid #fed7aa;border-radius:14px;padding:12px 14px;font-size:13.5px;color:#7c2d12}
+footer{margin-top:30px;color:#9aa3b2;font-size:12.5px}
+@media(max-width:980px){.kpis{grid-template-columns:1fr 1fr}.verdict,.wf,.goal{grid-template-columns:1fr}.ws,.ideas,.copy{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.ws,.ideas,.copy{grid-template-columns:1fr}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <div class="top"><span class="tag" data-t="tag"></span><div class="lang"><button id="bz">中文</button><button id="be">EN</button></div></div>
+ <div class="kick">BLACK FRIDAY · CYBER MONDAY · 2026</div>
+ <h1 data-t="h1"></h1><p class="lead" data-t="lead"></p>
+</div></header>
+<div class="wrap">
+ <div class="kpis" id="kpis"></div>
+
+ <section><h2 style="--c:#0f172a"><span class="dot"></span><span data-t="s_v"></span></h2><p class="sub" data-t="s_vs"></p><div class="verdict" id="verdict"></div></section>
+
+ <section><h2 style="--c:#ff5a1f"><span class="dot"></span><span data-t="s_t"></span></h2><p class="sub" data-t="s_ts"></p><div class="tl"><div class="tlg" id="tlg"></div><div class="prep" id="prep"></div></div></section>
+
+ <section><h2 style="--c:#2563eb"><span class="dot"></span><span data-t="s_w"></span></h2><p class="sub" data-t="s_ws"></p><div class="ws" id="ws"></div></section>
+
+ <section><h2 style="--c:#7c3aed"><span class="dot"></span><span data-t="s_d"></span></h2><p class="sub" data-t="s_ds"></p><div class="card"><table id="dtbl"></table></div></section>
+
+ <section><h2 style="--c:#0f766e"><span class="dot"></span><span data-t="s_p"></span></h2><p class="sub" data-t="s_ps"></p><div class="wf"><div class="page" id="page"></div><div class="qa" id="qa"></div></div></section>
+
+ <section><h2 style="--c:#db2777"><span class="dot"></span><span data-t="s_c"></span></h2><p class="sub" data-t="s_cs"></p><div class="copy" id="copy"></div><div class="note" data-t="cnote"></div></section>
+
+ <section><h2 style="--c:#f59e0b"><span class="dot"></span><span data-t="s_i"></span></h2><p class="sub" data-t="s_is"></p><div class="ideas" id="ideas"></div></section>
+
+ <section><h2 style="--c:#16a34a"><span class="dot"></span><span data-t="s_g"></span></h2><p class="sub" data-t="s_gs"></p><div class="goal" id="goal"></div></section>
+
+ <footer data-t="foot"></footer>
+</div>
+<script>
+const LAUNCH=new Date('2026-11-10T00:00:00-08:00'),END=new Date('2026-11-30T23:59:00-08:00');
+const T={
+zh:{tag:'OneLaser · 市场部 · BFCM 2026 作战计划',h1:'BFCM 2026<br><em>年度最大促销</em>营销作战计划',
+lead:'活动 11 月 10 日–30 日，两个月营收目标 $50 万。整体安排方向是对的：价格已定、分工清楚、KOL 改为链接引流也更公平。最大的问题是时间——离上线只剩几天，7 套设计 × 3 个方案 + 营销页 + 测试要压缩完成。下面是我的评估、时间线、分工和 10 个新增玩法。',
+k:['距离上线','活动天数','两个月营收目标','建议广告预算（5%）'],ku:['天','天','',''],
+s_v:'我的评估',s_vs:'左边是这套安排做得好的地方，右边是上线前必须补上的风险。',
+good:'做得好的',risk:'必须补的风险',
+g:[['价格先定、再做营销','价格已锁定，设计和文案可以一次做对，不返工。'],['分层清楚','SUPER Deal（限时限量）和 Deal（限时）两档，和价格策略一致。'],['KOL 改为链接','促销期停用所有 KOL 折扣码，避免叠加折扣、保护利润，佣金照样能追踪。'],['内容覆盖全','广告、EDM、SEO、KOL、官网五路同时打，产品线和品牌都有素材。']],
+r:[['时间极紧','离 11/10 上线只剩 3–4 天：7 套广告图 × 3 方案 + Banner + 营销页 + 测试，只有约 3 个工作日。建议设计今晚就开工，11/8 定稿。'],['Hydra 09 Hybrid 没有黑五价','它不参加黑五、保持原价。广告不能写成"黑五折扣"，要打"Best Seller / 现货 / 分期"——否则价格页和广告对不上，客诉和合规风险。'],['库存紧迫感必须真实','只能用真实库存数（我们本来就真的少），不能写假的"仅剩 3 台"。美国现货只有 45 台，在途的要标"预计 X 日发货"。'],['人手集中在 Trung 和 Marcus','EDM + SEO 都在 Trung；设计、网站、销售外呼没有写负责人。需要指定。'],['SEO 文章时效','文章要在 11/10 前发布才来得及被收录；同时用作 EDM 和社媒内容，一稿三用。']],
+s_t:'时间线',s_ts:'今天到 12 月底。红色虚线 = 今天。感恩节 11/26、黑五 11/27、网一 11/30 是三个高峰。',
+ph:[['准备 · 早鸟名单',0,4,'#64748b'],['主促期',4,20,'#ff5a1f'],['BF/CM 高峰',20,24,'#dc2626'],['12 月：清货延续 + 节日',24,56,'#7c3aed']],
+ms:[[0,'11/6','开工',0],[4,'11/10','正式上线',1],[11,'11/17','第 1 周复盘',0],[20.5,'11/26–27','感恩节 · 黑五',1],[24,'11/30','网一 · 活动结束',0],[49,'12/25','圣诞',1],[55,'12/31','两个月收官',0]],prep:['<b>11/6</b> 定方案 · 设计开工 · 早鸟名单上线','<b>11/7</b> 文案定稿 · KOL 通知 + 链接','<b>11/8</b> 设计 3 选 1 定稿','<b>11/9</b> 营销页测试 · SEO 文章发布','<b>11/10</b> 全渠道上线'],
+today:'今天',
+s_w:'分工与交付',s_ws:'黑字是你已经安排的，紫色"+"是我建议补充的。',
+ws:[['文案','待定（建议 Marcus 定稿）','#db2777','#f472b6',['主标语：Best Deal of Laser in 2026（见下方优化建议）','两档文案：SUPER Deal · Limited Time · Limited Stock / Deal · Limited Time'],['每款产品 1 句核心卖点 + 1 句紧迫感，所有渠道共用','12 月延续文案：Last Chance / Holiday Maker'],'11/7','统一信息'],
+['设计','待定（Elian 统筹素材）','#7c3aed','#a78bfa',['XRF、Hydra 07 Pro、Hydra 09 Hybrid、VertiGo、Cobra 广告图组各一套','品牌 BFCM 全产品线一套','官网 Banner 一套（要酷）','每套出 3 个方案选 1'],['每套含 Meta 1:1 / 4:5 / 9:16、Google 横版、EDM 头图','"已售 / 剩余"可替换数字的模板，方便每天更新'],'11/8','7 套定稿'],
+['网站','Zachary + 网站运营','#0f766e','#10b981',['上线 1laser.com/page/BFCM2026，参考竞品','SUPER Deal（限时限量）和 Deal（限时）两个区','所有库存显示紧迫感','上线前完整测试'],['真实库存条 + 倒计时（见创新 02）','移动端优先：先看手机版','GA4 事件：页面浏览、加购、结账'],'11/9','页面通过测试'],
+['付费广告','Marcus','#2563eb','#06b6d4',['Google / Meta 的 BFCM campaign'],['预算按营收 5%：两个月约 $25,000','ROAS ≥ 8 的组加预算，低于 3 的当天关','重定向：加购未买、看过营销页','Google Shopping 打上 Sale 价格标注'],'11/10','ROAS ≥ 8'],
+['EDM','Trung','#be185d','#f472b6',['BFCM 邮件序列'],['11/6–9 先发"早鸟名单"招募邮件（创新 01）','节奏：上线 / 每周一封 / 感恩节 / 黑五 / 网一 / 最后 24 小时','弃购和浏览弃单流程换成 BFCM 版本','加短信（SMS）给高意向名单'],'11/9','订阅 + 邮件营收'],
+['SEO / 内容','Trung','#0369a1','#38bdf8',['文章 1：年度最大 BFCM 促销推荐','文章 2：XRF 38W RF 可能是这个价位的最后机会；Hydra 07 Pro (G2) 70W 是目前最强 RF 机型','文章 3：Cobra 这次的 deal 实属罕见'],['11/10 前全部发布，内链到营销页','每篇改写成 1 封 EDM + 3 条社媒，一稿多用'],'11/9','3 篇上线'],
+['KOL','KC','#b45309','#f5b301',['通知所有 KOL 并提供素材','促销期间所有 KOL 折扣码停用','KOL 通过链接引流，公平竞争','好的视频素材放到官网'],['11/7 前发通知，给每人专属追踪链接（UpPromote）','给 KOL 一张"本周可说的话"清单，统一价格口径','KOL 视频剪成广告素材投放（需授权）'],'11/7','链接订单数'],
+['销售外呼','Sakura','#16a34a','#4ade80',[],['把 Pipedrive 里未跟进和报过价的线索全部过一遍，发 BFCM 专属跟进','高客单 Hydra 客户电话跟进','黑五当周加开直播/电话预约时段'],'11/10','线索转化'],
+['客服','客服团队','#475569','#94a3b8',[],['BFCM FAQ：发货时间（美国现货 vs 在途）、退换、保修','标准回复模板，24 小时内回复','每天把客户高频问题回传给市场'],'11/9','回复时效']],
+owner:'负责人',due:'截止',kpi:'衡量',
+s_d:'设计交付清单',s_ds:'7 套 × 3 个方案 = 21 个初稿，选 7 套定稿。尺寸统一，避免二次返工。',
+dth:['素材组','核心信息','必备尺寸','状态'],
+d:[['XRF 38W RF','SUPER Deal · 两档套装 · 限量'],['Hydra 07 Pro (G2)','SUPER Deal · 前 14 台 · 最强 RF'],['Hydra 09 Hybrid','Best Seller · 现货 · 不打折也值得'],['VertiGo','Deal · 立式新品 · 包邮'],['Cobra','Deal · 罕见折扣'],['品牌全产品线','Best Laser Deals of 2026 · 全线一图'],['官网 Banner','酷 · 动态 · 倒计时']],
+sizes:['Meta 1:1','4:5','9:16 Story/Reels','Google 1.91:1','EDM 600px','官网 桌面 + 手机'],st:'3 稿选 1',
+s_p:'营销页结构与上线测试',s_ps:'1laser.com/page/BFCM2026。左边是建议的页面结构（从上到下），右边是上线前测试清单，可以直接勾选。',
+pg:[['Hero Banner + 倒计时','结束时间 11/30 · 主标语','#0b1026'],['SUPER Deal 区','限时 + 限量 · 真实库存条','#ff5a1f'],['Deal 区','限时','#2563eb'],['Best Seller：Hydra 09 Hybrid','不打折 · 现货 · 分期','#0f766e'],['KOL / 客户视频墙','真实作品 + 评测','#7c3aed'],['分期付款 + 包邮说明','降低决策门槛','#16a34a'],['FAQ：发货 / 退换 / 保修','美国现货 vs 在途','#475569']],
+qah:'上线前测试清单',qa:['价格和价格表完全一致（含两档套装、Hydra 07 Pro 两段价）','手机、平板、桌面三端显示正常','每个"加入购物车"按钮能走完结账','库存数字来自真实库存，卖完自动显示 Sold Out','倒计时按太平洋时间结束','折扣码已停用，KOL 链接能正确追踪','GA4 / Meta 像素事件触发正常','页面打开速度 < 3 秒','运费显示正确（包邮型号显示 Free Shipping）','所有链接、Banner 跳转正确'],
+s_c:'文案优化',s_cs:'"Best Deal of Laser in 2026" 语法不太顺，英语母语用户读起来别扭。给你三个替代：',
+cp:[['The Best Laser Deals of 2026','直接替换，意思不变，最稳','linear-gradient(135deg,#ff5a1f,#ff2d55)'],['2026\'s Best Laser Deals. Limited Stock.','加入紧迫感，适合 SUPER Deal','linear-gradient(135deg,#7c3aed,#2563eb)'],['Our Biggest Sale of the Year','更口语，适合 EDM 标题','linear-gradient(135deg,#0f766e,#16a34a)']],
+cnote:'<b>命名提醒：</b>所有对外文案里 XRF 统一叫 "XRF 38W RF"。文章 2 的标题建议写成"XRF 38W RF：这个价位可能是最后的机会"。',
+s_i:'10 个创新玩法',s_is:'按影响力和投入排序。前 4 个建议本次一定做。',
+imp:'影响',eff:'投入',
+ideas:[['01','早鸟名单（Early Access）','11/6–9 先开"黑五早鸟名单"，留邮箱/手机号的人提前 24 小时拿到 SUPER Deal。上线前就攒一批高意向客户，顺便把订阅率从 0.7% 拉起来。',5,2,'#ff5a1f'],
+['02','真实库存条 + 已售跳动','营销页每款显示"已售 X / 剩 Y"，Hydra 07 Pro 显示"前 14 台还剩 N 台"。数字是真的，紧迫感也是真的——比假倒计时更有说服力，也没有合规风险。',5,2,'#dc2626'],
+['03','翻出老线索','Pipedrive 里有大量未跟进线索和报过价没成交的客户。一封 BFCM 专属邮件 + 销售电话，是这次成本最低、回报最高的一块。',5,1,'#16a34a'],
+['04','分期付款放大','高客单 Hydra 用 Clicklease 分期，广告写"低至 $X/月"。$8,000 的机器变成每月一笔小钱，决策门槛大幅下降。',4,1,'#2563eb'],
+['05','黑五直播','黑五当天 YouTube / Facebook 直播：现场对比雕刻速度和质量（沿用"真实 RF 挑战"），直播间下单送材料包（赠品，不是折扣）。',4,3,'#7c3aed'],
+['06','"买机器，做圣诞生意"','12 月主题：现在买，马上能做圣诞礼品卖钱。用客户案例算一笔回本账，把第二个月的营收接上。',4,2,'#be185d'],
+['07','年底抵税（Section 179）','美国企业在 12/31 前购入并投入使用的设备，通常可以当年抵扣。面向小企业客户打"年底前买、今年抵税"（注明请咨询税务顾问）。',4,1,'#0369a1'],
+['08','UGC 作品大赛','活动期间客户晒 OneLaser 作品，评选送材料或配件。一次活动换来大量真实视频素材，补上官网和广告的内容缺口。',3,2,'#f59e0b'],
+['09','以旧换新','老机器（任何品牌）换购 OneLaser 抵一部分钱，面向已经在做激光的用户。门槛高的用户最容易被这一招打动。',3,3,'#0f766e'],
+['10','圣诞到货截止日','在营销页和 EDM 标出"X 月 X 日前下单，圣诞前送达"。截止日本身就是第二波紧迫感，也能减少客服询问。',3,1,'#475569']],
+s_g:'目标拆解：两个月 $50 万',s_gs:'左边是建议的节奏（可按实际调整），右边是达成目标最关键的几个杠杆。',
+pace:'建议节奏',lev:'关键杠杆',
+pc:[['11/10–11/22 主促期',30,'#f59e0b'],['11/23–11/30 BF/CM 周',30,'#dc2626'],['12 月 清货延续 + 节日',40,'#7c3aed']],
+lv:[['广告预算（5%）','约 $25,000'],['ROAS 目标','≥ 8（广告带来约 $20 万）'],['其余来自','EDM、老线索、KOL、自然流量、销售成交'],['参考：XRF 38W RF 卖出 60 台','≈ $27–30 万'],['参考：清货 192 台全部卖完','≈ $125 万，远超目标——目标可以再拉高']],
+foot:'OneLaser 市场部 · BFCM 2026。价格与库存以《BFCM 价格策略与清货目标》为准；本页只讲营销安排。日期按太平洋时间。'},
+en:{tag:'OneLaser · Marketing · BFCM 2026 battle plan',h1:'BFCM 2026<br><em>Biggest Sale of the Year</em> Marketing Plan',
+lead:'The campaign runs Nov 10–30 with a $500K two-month revenue goal. The plan points the right way: prices are locked, roles are clear, and moving KOLs to links is fairer. The biggest problem is time — only days remain to launch, so 7 ad sets × 3 options + the landing page + testing must be compressed. Below: my assessment, the timeline, owners and 10 new ideas.',
+k:['Days to launch','Campaign days','Two-month revenue goal','Suggested ad budget (5%)'],ku:['days','days','',''],
+s_v:'My assessment',s_vs:'Left: what this plan gets right. Right: risks to close before launch.',
+good:'What works',risk:'Risks to close',
+g:[['Price first, then marketing','Prices are locked, so design and copy can be done right once with no rework.'],['Clear tiers','SUPER Deal (limited time + stock) and Deal (limited time) match the pricing strategy.'],['KOLs move to links','All KOL codes are off during the sale — no stacked discounts, margin protected, commissions still tracked.'],['Full coverage','Ads, email, SEO, KOLs and the site fire together, with assets for products and brand.']],
+r:[['Very tight timing','Launch on 11/10 is 3–4 days away: 7 ad sets × 3 options + banner + page + testing in about 3 working days. Start design tonight and lock it on 11/8.'],['Hydra 09 Hybrid has no BF price','It sits out Black Friday at full price. Ads must not say "Black Friday discount" — lead with Best Seller / in stock / financing, or ads and the price page will not match.'],['Scarcity must be real','Use only real stock counts (ours genuinely are low) — never a fake "only 3 left". Only 45 units are in the US; in-transit stock must show "ships by X".'],['Load sits on Trung and Marcus','Email + SEO are both Trung; design, website and sales outreach have no owner. Assign them.'],['SEO timing','Articles must be live before 11/10 to be indexed; reuse each as email and social content.']],
+s_t:'Timeline',s_ts:'Today through end of December. Red dashed line = today. Thanksgiving 11/26, Black Friday 11/27 and Cyber Monday 11/30 are the three peaks.',
+ph:[['Prep · early access',0,4,'#64748b'],['Main promo',4,20,'#ff5a1f'],['BF/CM peak',20,24,'#dc2626'],['December: clearance + holiday',24,56,'#7c3aed']],
+ms:[[0,'11/6','Start',0],[4,'11/10','Launch',1],[11,'11/17','Week 1 review',0],[20.5,'11/26–27','Thanksgiving · Black Friday',1],[24,'11/30','Cyber Monday · end',0],[49,'12/25','Christmas',1],[55,'12/31','Two-month close',0]],prep:['<b>11/6</b> Decide · start design · open early-access list','<b>11/7</b> Copy locked · KOL notice + links','<b>11/8</b> Design: pick 1 of 3','<b>11/9</b> Page QA · SEO articles live','<b>11/10</b> All channels live'],
+today:'Today',
+s_w:'Owners and deliverables',s_ws:'Black = what you assigned; purple "+" = what I suggest adding.',
+ws:[['Copy','TBD (Marcus to sign off)','#db2777','#f472b6',['Headline: Best Deal of Laser in 2026 (see copy fixes below)','Two tiers: SUPER Deal · Limited Time · Limited Stock / Deal · Limited Time'],['One core benefit + one urgency line per product, shared by every channel','December follow-on copy: Last Chance / Holiday Maker'],'11/7','One message'],
+['Design','TBD (Elian runs assets)','#7c3aed','#a78bfa',['Ad sets for XRF, Hydra 07 Pro, Hydra 09 Hybrid, VertiGo and Cobra','One brand BFCM full-line set','Site banner (make it cool)','3 options per set, pick 1'],['Each set: Meta 1:1 / 4:5 / 9:16, Google landscape, email header','Templates with swappable "sold / left" numbers for daily updates'],'11/8','7 sets locked'],
+['Website','Zachary + website ops','#0f766e','#10b981',['Launch 1laser.com/page/BFCM2026, modeled on competitors','SUPER Deal (limited time + stock) and Deal (limited time) sections','Scarcity on every stock count','Full test before launch'],['Real stock bars + countdown (idea 02)','Mobile first','GA4 events: page view, add to cart, checkout'],'11/9','Page passes QA'],
+['Paid ads','Marcus','#2563eb','#06b6d4',['Google / Meta BFCM campaigns'],['Budget at 5% of revenue: about $25,000 over two months','Scale ad sets at ROAS ≥ 8; kill under 3 the same day','Retarget cart abandoners and page visitors','Sale price annotations in Google Shopping'],'11/10','ROAS ≥ 8'],
+['Email','Trung','#be185d','#f472b6',['BFCM email sequence'],['11/6–9 early-access list signup email (idea 01)','Cadence: launch / weekly / Thanksgiving / Black Friday / Cyber Monday / last 24 hours','Switch abandoned-cart and browse flows to BFCM versions','Add SMS for high-intent contacts'],'11/9','Signups + email revenue'],
+['SEO / content','Trung','#0369a1','#38bdf8',['Article 1: the biggest BFCM deals of the year','Article 2: XRF 38W RF may be the last chance at this price; Hydra 07 Pro (G2) 70W is the best RF machine today','Article 3: a Cobra deal this good is rare'],['All live before 11/10, linked to the landing page','Each article becomes 1 email + 3 social posts'],'11/9','3 articles live'],
+['KOL','KC','#b45309','#f5b301',['Notify all KOLs with assets','All KOL discount codes off during the sale','KOLs drive traffic through links — fair competition','Put the best KOL videos on the site'],['Notify by 11/7 with a unique tracking link each (UpPromote)','Give KOLs a "what to say this week" sheet so pricing stays consistent','Cut KOL videos into ads (with permission)'],'11/7','Link orders'],
+['Sales outreach','Sakura','#16a34a','#4ade80',[],['Work every unfollowed and quoted lead in Pipedrive with a BFCM follow-up','Phone high-ticket Hydra prospects','Add live demo / call slots in Black Friday week'],'11/10','Lead conversion'],
+['Support','Support team','#475569','#94a3b8',[],['BFCM FAQ: ship times (US stock vs in transit), returns, warranty','Reply templates; answer within 24 hours','Send top customer questions back to marketing daily'],'11/9','Reply time']],
+owner:'Owner',due:'Due',kpi:'Measure',
+s_d:'Design deliverables',s_ds:'7 sets × 3 options = 21 drafts, 7 locked. One size list to avoid rework.',
+dth:['Asset set','Core message','Required sizes','Status'],
+d:[['XRF 38W RF','SUPER Deal · two bundles · limited'],['Hydra 07 Pro (G2)','SUPER Deal · first 14 units · best RF'],['Hydra 09 Hybrid','Best Seller · in stock · worth it at full price'],['VertiGo','Deal · new vertical · free shipping'],['Cobra','Deal · a rare discount'],['Brand full line','Best Laser Deals of 2026 · whole line in one'],['Site banner','Cool · animated · countdown']],
+sizes:['Meta 1:1','4:5','9:16 Story/Reels','Google 1.91:1','Email 600px','Site desktop + mobile'],st:'3 options, pick 1',
+s_p:'Landing page structure and launch QA',s_ps:'1laser.com/page/BFCM2026. Left: suggested page structure, top to bottom. Right: pre-launch test checklist you can tick.',
+pg:[['Hero banner + countdown','Ends 11/30 · headline','#0b1026'],['SUPER Deal section','Limited time + stock · real stock bars','#ff5a1f'],['Deal section','Limited time','#2563eb'],['Best Seller: Hydra 09 Hybrid','No discount · in stock · financing','#0f766e'],['KOL / customer video wall','Real projects + reviews','#7c3aed'],['Financing + free shipping','Lower the decision barrier','#16a34a'],['FAQ: shipping / returns / warranty','US stock vs in transit','#475569']],
+qah:'Pre-launch test checklist',qa:['Prices match the price sheet exactly (incl. the two bundles and Hydra 07 Pro two-stage price)','Displays correctly on phone, tablet and desktop','Every Add to Cart completes checkout','Stock numbers come from real inventory; sold out shows Sold Out','Countdown ends on Pacific time','Discount codes are off; KOL links track correctly','GA4 / Meta pixel events fire','Page loads in under 3 seconds','Shipping shows correctly (Free Shipping on free-ship models)','Every link and banner goes to the right place'],
+s_c:'Copy fixes',s_cs:'"Best Deal of Laser in 2026" reads awkwardly to native English speakers. Three replacements:',
+cp:[['The Best Laser Deals of 2026','Direct swap, same meaning, safest','linear-gradient(135deg,#ff5a1f,#ff2d55)'],['2026\'s Best Laser Deals. Limited Stock.','Adds urgency; fits SUPER Deal','linear-gradient(135deg,#7c3aed,#2563eb)'],['Our Biggest Sale of the Year','More conversational; good email subject','linear-gradient(135deg,#0f766e,#16a34a)']],
+cnote:'<b>Naming:</b> in all external copy XRF is simply "XRF 38W RF". Suggested title for article 2: "XRF 38W RF: Possibly the Last Chance at This Price".',
+s_i:'10 new ideas',s_is:'Ranked by impact and effort. Do the first 4 this time.',
+imp:'Impact',eff:'Effort',
+ideas:[['01','Early Access list','Open a Black Friday early-access list 11/6–9; signups get SUPER Deals 24 hours early. Builds a pool of high-intent buyers before launch and lifts the 0.7% signup rate.',5,2,'#ff5a1f'],
+['02','Real stock bars + live "sold"','Show "X sold / Y left" per model; Hydra 07 Pro shows "N of the first 14 left". The numbers are real, so the urgency is real — more convincing than a fake countdown, and no compliance risk.',5,2,'#dc2626'],
+['03','Revive old leads','Pipedrive holds many unfollowed leads and unclosed quotes. One BFCM email + a sales call is the cheapest, highest-return play this time.',5,1,'#16a34a'],
+['04','Push financing','Use Clicklease on high-ticket Hydras; ads say "as low as $X/month". An $8,000 machine becomes a small monthly payment.',4,1,'#2563eb'],
+['05','Black Friday livestream','Go live on YouTube / Facebook on Black Friday: side-by-side speed and quality tests (reuse the Real-World RF Challenge), with a free material pack for live orders (a gift, not a discount).',4,3,'#7c3aed'],
+['06','"Buy a laser, run a Christmas business"','December theme: buy now and start making holiday gifts to sell. Use customer cases to show payback and carry revenue into month two.',4,2,'#be185d'],
+['07','Year-end tax angle (Section 179)','US businesses can usually deduct equipment bought and placed in service by 12/31. Pitch small-business buyers "buy before year end, deduct this year" (consult a tax advisor).',4,1,'#0369a1'],
+['08','UGC project contest','Customers post OneLaser projects during the sale; winners get materials or accessories. Yields a pile of real video for the site and ads.',3,2,'#f59e0b'],
+['09','Trade-in','Trade any brand\'s old machine toward a OneLaser. Aimed at people already doing laser work — the hardest buyers to move.',3,3,'#0f766e'],
+['10','Christmas delivery cutoff','Show "order by X for delivery before Christmas" on the page and in email. The cutoff is a second wave of urgency and cuts support questions.',3,1,'#475569']],
+s_g:'Breaking down the goal: $500K in two months',s_gs:'Left: a suggested pace (adjust as needed). Right: the levers that matter most.',
+pace:'Suggested pace',lev:'Key levers',
+pc:[['11/10–11/22 main promo',30,'#f59e0b'],['11/23–11/30 BF/CM week',30,'#dc2626'],['December clearance + holiday',40,'#7c3aed']],
+lv:[['Ad budget (5%)','about $25,000'],['ROAS target','≥ 8 (about $200K from ads)'],['The rest from','email, old leads, KOLs, organic, sales-closed deals'],['Reference: 60 XRF 38W RF sold','≈ $270–300K'],['Reference: all 192 clearance units sold','≈ $1.25M — well above goal; the goal can go higher']],
+foot:'OneLaser Marketing · BFCM 2026. Prices and stock follow the "BFCM Pricing Strategy & Clearance Goals" page; this page covers marketing only. Dates in Pacific time.'}};
+let L='zh';try{L=localStorage.getItem('bfm-lang')||'zh'}catch(e){}
+let QA=[];try{QA=JSON.parse(localStorage.getItem('bfm-qa')||'[]')}catch(e){}
+const dots=(n,c)=>`<span class="dots">${[1,2,3,4,5].map(i=>`<i class="${i<=n?'on':''}" style="--c:${c}"></i>`).join('')}</span>`;
+function render(){
+ const t=T[L];document.documentElement.lang=L==='zh'?'zh':'en';
+ document.querySelectorAll('[data-t]').forEach(el=>el.innerHTML=t[el.dataset.t]);
+ bz.className=L==='zh'?'on':'';be.className=L==='en'?'on':'';
+ const now=new Date(),dl=Math.max(0,Math.ceil((LAUNCH-now)/864e5));
+ const kv=[dl,21,'$500K','$25K'],kc=['#dc2626','#ff5a1f','#16a34a','#2563eb'];
+ kpis.innerHTML=kv.map((v,i)=>`<div class="kpi" style="--c:${kc[i]}"><div class="v">${v}<small style="font-size:13px;font-weight:600"> ${t.ku[i]}</small></div><div class="l">${t.k[i]}</div></div>`).join('');
+ verdict.innerHTML=`<div class="vc" style="--c:#16a34a"><h3>${t.good}</h3>${t.g.map(x=>`<div class="it"><div class="ic">✓</div><div><b>${x[0]}</b><span>${x[1]}</span></div></div>`).join('')}</div><div class="vc" style="--c:#dc2626"><h3>${t.risk}</h3>${t.r.map((x,i)=>`<div class="it"><div class="ic">${i+1}</div><div><b>${x[0]}</b><span>${x[1]}</span></div></div>`).join('')}</div>`;
+ const D=56,x=d=>d<=24?d/24*70:70+(d-24)/(D-24)*29;
+ const start=new Date('2026-11-06T00:00:00-08:00'),td=(now-start)/864e5;
+ tlg.innerHTML=`<div class="tlax"></div>`+t.ph.map(p=>`<div class="ph" style="left:${x(p[1])}%;width:calc(${x(p[2])-x(p[1])}% - 3px);background:${p[3]}">${p[0]}</div>`).join('')+t.ms.map(m=>{const c=m[0]>=20&&m[0]<=24?'#dc2626':m[0]===4?'#ff5a1f':'#475569';return `<div class="ms" style="left:${x(m[0])}%;--c:${c}"><div class="pin"></div><div class="lb ${m[3]?'up':'dn'}"><div class="d">${m[1]}</div><div class="n">${m[2]}</div></div></div>`}).join('')+(td>=0&&td<=D?`<div class="today" style="left:${x(td)}%"><span>${t.today}</span></div>`:'');
+ prep.innerHTML=t.prep.map(s=>`<span>${s}</span>`).join('');
+ ws.innerHTML=t.ws.map(w=>`<div class="w" style="--c:${w[2]};--c2:${w[3]}"><div class="hd"><div class="t">${w[0]}${w[4].length?'':`<span class="new">${L==='zh'?'新增':'New'}</span>`}</div><div class="o">${t.owner}：${w[1]}</div></div><ul>${w[4].map(s=>`<li>${s}</li>`).join('')}${w[5].map(s=>`<li class="add">${s}</li>`).join('')}</ul><div class="ft"><span>${t.due} <b>${w[6]}</b></span><span>${t.kpi} <b>${w[7]}</b></span></div></div>`).join('');
+ const pc=['#ff5a1f','#9333ea','#0f766e','#ca8a04','#2563eb','#0b1026','#db2777'];
+ dtbl.innerHTML='<thead><tr>'+t.dth.map(h=>`<th>${h}</th>`).join('')+'</tr></thead><tbody>'+t.d.map((r,i)=>`<tr><td><b style="color:${pc[i]}">${r[0]}</b></td><td>${r[1]}</td><td>${(i===6?t.sizes.slice(5):t.sizes.slice(0,5)).map(s=>`<span class="pill" style="--b:#eef2ff;--f:#3730a3">${s}</span>`).join('')}</td><td><span class="pill" style="--b:#fff6e5;--f:#b45309">${t.st}</span></td></tr>`).join('')+'</tbody>';
+ page.innerHTML=t.pg.map((b,i)=>`<div class="blk" style="--c:${b[2]}"><b>${i+1}. ${b[0]}</b><span>${b[1]}</span></div>`).join('');
+ const done=QA.filter(Boolean).length;
+ qa.innerHTML=`<h3>${t.qah} · ${done}/${t.qa.length}</h3><div class="bar"><i style="width:${done/t.qa.length*100}%"></i></div>`+t.qa.map((q,i)=>`<label><input type="checkbox" ${QA[i]?'checked':''} onchange="tick(${i},this.checked)"><span>${q}</span></label>`).join('');
+ copy.innerHTML=t.cp.map(c=>`<div class="cp" style="--g:${c[2]}"><div class="q">${c[0]}</div><div class="u">${c[1]}</div></div>`).join('');
+ ideas.innerHTML=t.ideas.map(d=>`<div class="idea" style="--c:${d[5]}"><div class="no">${L==='zh'?'创新':'IDEA'} ${d[0]}</div><h3>${d[1]}</h3><p>${d[2]}</p><div class="meter"><span>${t.imp}${dots(d[3],d[5])}</span><span>${t.eff}${dots(d[4],'#94a3b8')}</span></div></div>`).join('');
+ goal.innerHTML=`<div class="gbox"><h3>${t.pace}</h3><div class="pace">${t.pc.map(p=>`<div class="pr" style="--c:${p[2]}"><span>${p[0]}</span><div class="tr"><i style="width:${p[1]/40*100}%"></i></div><b>$${p[1]*5}K</b></div>`).join('')}</div></div><div class="gbox"><h3>${t.lev}</h3>${t.lv.map(v=>`<div class="lever" style="--c:#16a34a"><span>${v[0]}</span><b>${v[1]}</b></div>`).join('')}</div>`;
+ document.title=L==='zh'?'OneLaser BFCM 2026 营销作战计划':'OneLaser BFCM 2026 Marketing Plan';
+}
+function tick(i,v){QA[i]=v;try{localStorage.setItem('bfm-qa',JSON.stringify(QA))}catch(e){}render()}
+function setL(l){L=l;try{localStorage.setItem('bfm-lang',l)}catch(e){}render()}
+bz.onclick=()=>setL('zh');be.onclick=()=>setL('en');render();
+</script>
+</body>
+</html>

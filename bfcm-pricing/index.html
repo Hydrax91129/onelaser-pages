@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneLaser 2026 BFCM 价格策略与清货目标</title>
+<style>
+:root{--ink:#14213d;--ink2:#4a5568;--line:#e6e9f0;--bg:#f5f6fb;
+--super:#ff5a1f;--superbg:#fff1ea;--bfcm:#2563eb;--bfcmbg:#eaf1ff;--tbd:#8a94a6;--tbdbg:#eef0f4;--no:#475569;--nobg:#f1f5f9;
+--good:#16a34a;--goodbg:#e8f7ee;--warn:#d97706;--warnbg:#fff6e5;--ser:#ea580c;--serbg:#fff0e6;--bad:#dc2626;--badbg:#fdecec;--gold:#f5b301}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px 60px}
+header{background:linear-gradient(120deg,#0b1026 0%,#1b2a6b 45%,#ff5a1f 135%);color:#fff;padding:30px 0 90px;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;right:-130px;top:-130px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,31,.55),transparent 65%)}
+.top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.tag{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:4px 12px;border-radius:999px;font-size:13px}
+.lang{display:flex;background:rgba(255,255,255,.12);border-radius:999px;padding:3px}
+.lang button{border:0;background:transparent;color:#fff;padding:6px 14px;border-radius:999px;cursor:pointer;font-weight:600;font-size:13px}
+.lang button.on{background:#fff;color:var(--ink)}
+h1{font-size:33px;margin:18px 0 8px;position:relative;z-index:1}
+h1 em{font-style:normal;background:linear-gradient(90deg,#ffd166,#ff8a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:900px;margin:0;opacity:.93;position:relative;z-index:1;font-size:15.5px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:-60px;position:relative;z-index:2}
+.kpi{background:#fff;border-radius:16px;padding:15px 17px;box-shadow:0 8px 24px rgba(20,33,61,.08);border-top:4px solid var(--c)}
+.kpi .v{font-size:26px;font-weight:800;color:var(--c)}
+.kpi .l{font-size:12.5px;color:var(--ink2)}
+section{margin-top:36px}
+h2{font-size:22px;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+h2 .dot{width:10px;height:26px;border-radius:4px;background:var(--c)}
+h2 .lock{font-size:12px;background:var(--bad);color:#fff;padding:3px 10px;border-radius:999px}
+.sub{color:var(--ink2);margin:0 0 16px;font-size:14px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pl{border-radius:18px;padding:20px;color:#fff;background:var(--g);box-shadow:0 8px 22px rgba(20,33,61,.12)}
+.pl .no{font-size:12px;opacity:.85;letter-spacing:1px}
+.pl h3{margin:4px 0 8px;font-size:19px}
+.pl p{margin:0;font-size:14px;opacity:.95}
+.pl .big{font-size:30px;font-weight:800;margin-top:10px}
+.pl .big small{font-size:13px;font-weight:600;opacity:.9}
+.ladder{display:grid;gap:10px}
+.rung{display:grid;grid-template-columns:230px 1fr;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(20,33,61,.05)}
+.rung .lv{background:var(--c);color:#fff;padding:14px 16px}
+.rung .lv b{display:block;font-size:15.5px}
+.rung .lv span{font-size:12.5px;opacity:.92}
+.rung .it{padding:12px 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.rung .it .use{width:100%;font-size:12.5px;color:var(--ink2)}
+.sku{display:inline-flex;align-items:center;gap:6px;background:var(--cb);color:var(--c);border-radius:999px;padding:4px 11px;font-size:13px;font-weight:700}
+.sku i{font-style:normal;font-weight:800;opacity:.75}
+.empty{font-size:13px;color:#9aa3b2}
+.pri{display:grid;gap:14px}
+.pc{display:grid;grid-template-columns:86px 1fr 330px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 18px rgba(20,33,61,.06)}
+.pc .rk{background:var(--g);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800}
+.pc .rk b{font-size:30px;line-height:1}
+.pc .rk span{font-size:11.5px;opacity:.9;margin-top:4px}
+.pc .md{padding:16px 18px}
+.pc .md h3{margin:0 0 4px;font-size:17px}
+.pc .md .px{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;margin:4px 0 8px}
+.pc .md .px .now{font-size:24px;font-weight:800}
+.pc .md .px .was{color:#9aa3b2;text-decoration:line-through}
+.chip{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--b);color:var(--f)}
+.say{background:#f8fafc;border-left:4px solid var(--g2);padding:8px 10px;border-radius:8px;font-size:13.5px;margin-top:8px}
+.pc .rt{padding:16px 18px;background:#fafbfe;border-left:1px solid var(--line)}
+.goal{font-size:13px;color:var(--ink2)}
+.goal b{font-size:22px;color:var(--g2);margin-right:4px}
+.loc{display:flex;height:14px;border-radius:99px;overflow:hidden;margin:10px 0 6px;background:#eef0f4}
+.loc i{display:block;height:100%}
+.lk{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--ink2)}
+.lk span:before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-right:5px;vertical-align:-1px}
+.alert{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#fff4e5,#fff);border:2px solid #fcd9a6;border-radius:18px;padding:16px 18px;margin-top:16px}
+.alert .ic{flex:none;width:36px;height:36px;border-radius:50%;background:var(--warn);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:18px}
+.alert b{display:block;font-size:15.5px;color:#9a3412}
+.alert p{margin:4px 0 0;font-size:13.5px;color:var(--ink2)}
+.card{background:#fff;border-radius:18px;box-shadow:0 6px 20px rgba(20,33,61,.06);padding:6px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{font-size:12px;color:var(--ink2);text-align:right;padding:12px 9px;border-bottom:2px solid var(--line);white-space:nowrap;font-weight:700}
+td{padding:10px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:nth-child(-n+2),td:nth-child(-n+2){text-align:left}
+tr.no td{color:#94a3b8;background:#fafafa}
+tr:hover td{background:#f5f8ff}
+.badge{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;display:inline-block}
+.b-super{background:var(--superbg);color:var(--super)}.b-bfcm{background:var(--bfcmbg);color:var(--bfcm)}.b-tbd{background:var(--tbdbg);color:var(--tbd);border:1px dashed var(--tbd)}.b-no{background:var(--nobg);color:var(--no)}.b-clr{background:#1f2937;color:#fff}
+.nbc{display:grid;grid-template-columns:1fr 1fr;gap:16px}.nbk{background:#fff;border-radius:18px;padding:18px;box-shadow:0 6px 18px rgba(20,33,61,.06);border:2px solid var(--bc)}.nbk .hd{font-size:12.5px;font-weight:800;color:var(--bc)}.nbk .nm{font-size:17px;font-weight:800;margin:2px 0 6px}.nbk .now{font-size:30px;font-weight:800}.nbk .was{color:#9aa3b2;text-decoration:line-through;margin-left:8px}.nbk .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.warnbox{margin-top:14px;background:#fdecec;border:2px solid #fca5a5;border-radius:14px;padding:12px 14px;font-size:13.5px;color:#7f1d1d}
+@media(max-width:980px){.nbc{grid-template-columns:1fr}}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 4px}
+.op{border:2px solid var(--line);border-radius:14px;padding:10px 12px;background:#fff}
+.op.hot{border-color:#ff5a1f;background:linear-gradient(180deg,#fff4ee,#fff)}
+.op .ol{font-size:12px;font-weight:700;color:var(--ink2)}
+.op.hot .ol{color:#ff5a1f}
+.op .now{font-size:24px;font-weight:800;display:block;margin:2px 0 6px}
+.op .chips{display:flex;flex-wrap:wrap;gap:5px}
+tr.bund td{background:#fff8f3}
+.clr{font-size:11px;background:#1f2937;color:#fff;padding:1px 7px;border-radius:6px;margin-left:6px;vertical-align:1px}
+.free{background:var(--goodbg);color:var(--good);font-weight:700;font-size:12px;padding:2px 8px;border-radius:999px}
+.np{font-weight:800;padding:2px 8px;border-radius:8px;background:var(--cb);color:var(--c)}
+.mini{display:block;font-size:11px;color:#9aa3b2}
+.teams{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tm{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px rgba(20,33,61,.05)}
+.tm h3{margin:0;padding:12px 16px;color:#fff;background:var(--c);font-size:15.5px}
+.tm ul{margin:0;padding:12px 16px 14px 32px;font-size:13.5px}
+.tm li{margin:5px 0}
+.todo{display:grid;gap:10px}
+.td{display:flex;gap:12px;background:#fff;border-radius:14px;padding:13px 16px;box-shadow:0 3px 10px rgba(20,33,61,.05);border-left:6px solid var(--warn)}
+.td .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--warnbg);color:var(--warn);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.td b{display:block}.td span{font-size:13.5px;color:var(--ink2)}
+footer{margin-top:28px;color:#9aa3b2;font-size:12.5px}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}.pillars,.teams{grid-template-columns:1fr}.pc{grid-template-columns:70px 1fr}.pc .rt{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}.rung{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <div class="top"><span class="tag" data-t="tag"></span><div class="lang"><button id="bz">中文</button><button id="be">EN</button></div></div>
+ <h1 data-t="h1"></h1><p class="lead" data-t="lead"></p>
+</div></header>
+<div class="wrap">
+ <div class="kpis" id="kpis"></div>
+
+ <section><h2 style="--c:#1b2a6b"><span class="dot"></span><span data-t="s1"></span></h2><p class="sub" data-t="s1s"></p><div class="pillars" id="pillars"></div></section>
+
+ <section><h2 style="--c:#ff5a1f"><span class="dot"></span><span data-t="s2"></span></h2><p class="sub" data-t="s2s"></p><div class="ladder" id="ladder"></div></section>
+
+ <section><h2 style="--c:#dc2626"><span class="dot"></span><span data-t="s3"></span></h2><p class="sub" data-t="s3s"></p><div class="pri" id="pri"></div>
+  <div class="alert"><div class="ic">!</div><div><b data-t="alt"></b><p data-t="alp"></p></div></div></section>
+ <section><h2 style="--c:#16a34a"><span class="dot"></span><span data-t="nb"></span></h2><p class="sub" data-t="nbs"></p><div id="nbx"></div></section>
+
+ <section><h2 style="--c:#2563eb"><span class="dot"></span><span data-t="s4"></span><span class="lock" data-t="lock"></span></h2><p class="sub" data-t="s4s"></p><div class="card"><table id="tbl"></table></div></section>
+
+ <section><h2 style="--c:#7c3aed"><span class="dot"></span><span data-t="s5"></span></h2><p class="sub" data-t="s5s"></p><div class="teams" id="teams"></div></section>
+
+ <section><h2 style="--c:#d97706"><span class="dot"></span><span data-t="s6"></span></h2><p class="sub" data-t="s6s"></p><div class="todo" id="todo"></div></section>
+ <footer data-t="foot"></footer>
+</div>
+<script>
+const R=[{"sku": "OCL-CBR08-90-US01", "zh": "Cobra 08 90W", "en": "Cobra 08 90W", "tier": "super", "clear": false, "msrp": 5999, "site": 5999, "bf": 3999, "ship": 499, "ssite": 499, "total": 4498, "stock": 8, "us": 2, "tr": 0, "cn": 6, "semi": 0, "npcr": 17.0}, {"sku": "OCL-CBR10-100-US01", "zh": "Cobra 10 105W", "en": "Cobra 10 105W", "tier": "bfcm", "clear": false, "msrp": 6999, "site": 6999, "bf": 4999, "ship": 699, "ssite": 699, "total": 5698, "stock": 11, "us": 1, "tr": 4, "cn": 6, "semi": 0, "npcr": 19.6}, {"sku": "OCL-CBR14-130-US01", "zh": "Cobra 14 130W", "en": "Cobra 14 130W", "tier": "bfcm", "clear": false, "msrp": 8999, "site": 8999, "bf": 6999, "ship": 699, "ssite": 699, "total": 7698, "stock": 6, "us": 0, "tr": 4, "cn": 2, "semi": 0, "npcr": 17.9}, {"sku": "OCL-HRA09-10038-US02", "zh": "Hydra 09 Hybrid (G2)", "en": "Hydra 09 Hybrid (G2)", "tier": "no", "clear": false, "msrp": 10999, "site": 10999, "bf": 10999, "ship": 499, "ssite": 599, "total": 11498, "stock": 10, "us": 1, "tr": 0, "cn": 9, "semi": 4, "npcr": 33.4}, {"sku": "OCL-HRA13-13038-US02", "zh": "Hydra 13 Hybrid (G2)", "en": "Hydra 13 Hybrid (G2)", "tier": "no", "clear": false, "msrp": 12999, "site": 12999, "bf": 12999, "ship": 599, "ssite": 699, "total": 13598, "stock": 12, "us": 0, "tr": 6, "cn": 6, "semi": 0, "npcr": 31.0}, {"sku": "OCL-HRA16-15038-US02", "zh": "Hydra 16 Hybrid (G2)", "en": "Hydra 16 Hybrid (G2)", "tier": "no", "clear": false, "msrp": 13999, "site": 13999, "bf": 13999, "ship": 699, "ssite": 699, "total": 14698, "stock": 4, "us": 0, "tr": 4, "cn": 0, "semi": 0, "npcr": 33.1}, {"sku": "ODL-VTG-38-US01", "zh": "VertiGo 38W RF 立式", "en": "VertiGo 38W RF vertical", "tier": "bfcm", "clear": false, "msrp": 5999, "site": 5599, "bf": 4999, "ship": 0, "ssite": 399, "total": 4999, "stock": 29, "us": 0, "tr": 24, "cn": 5, "semi": 0, "npcr": 25.3}, {"sku": "OCL-HRA07-80-US01", "zh": "Hydra 07 80W 玻璃管", "en": "Hydra 07 80W glass tube", "tier": "super", "clear": true, "msrp": 7999, "site": 6299, "bf": 5999, "ship": 499, "ssite": 499, "total": 6498, "stock": 1, "us": 1, "tr": 0, "cn": 0, "semi": 0, "npcr": 15.4}, {"sku": "OCL-HRA07-RF70-US02", "zh": "Hydra 07 Pro (G2)", "en": "Hydra 07 Pro (G2)", "tier": "super", "clear": true, "msrp": 10999, "site": 10999, "bf": 7999, "ship": 499, "ssite": 499, "total": 8498, "stock": 31, "us": 14, "tr": 0, "cn": 17, "semi": 0, "npcr": 12.2, "s1n": 14, "bf2": 8999, "total2": 9498, "npcr2": 19.6}, {"sku": "OCL-HRA09-10038-US01", "zh": "Hydra 09 双光 100W+38W RF", "en": "Hydra 09 dual 100W+38W RF", "tier": "bfcm", "clear": true, "msrp": 10999, "site": 8999, "bf": 8999, "ship": 499, "ssite": 599, "total": 9498, "stock": 13, "us": 11, "tr": 0, "cn": 2, "semi": 0, "npcr": 23.7}, {"sku": "OCL-HRA09-RF70-US02", "zh": "Hydra 09 Pro (G2)", "en": "Hydra 09 Pro (G2)", "tier": "clr", "clear": true, "msrp": 11999, "site": 11999, "bf": 9999, "ship": 499, "ssite": 599, "total": 10498, "stock": 11, "us": 5, "tr": 0, "cn": 6, "semi": 5, "npcr": 23.1}, {"sku": "OCL-HRA13-RF70-US02", "zh": "Hydra 13 Pro (G2)", "en": "Hydra 13 Pro (G2)", "tier": "bfcm", "clear": true, "msrp": 13999, "site": 13999, "bf": 11999, "ship": 599, "ssite": 699, "total": 12598, "stock": 8, "us": 0, "tr": 2, "cn": 6, "semi": 5, "npcr": 22.0}, {"sku": "OCL-HRA16-15038-US01", "zh": "Hydra 16 双光 150W+38W RF", "en": "Hydra 16 dual 150W+38W RF", "tier": "super", "clear": true, "msrp": 13999, "site": 12599, "bf": 11999, "ship": 699, "ssite": 699, "total": 12698, "stock": 1, "us": 1, "tr": 0, "cn": 0, "semi": 0, "npcr": 19.6}, {"sku": "OCL-HRA16-RF70-US02", "zh": "Hydra 16 Pro (G2)", "en": "Hydra 16 Pro (G2)", "tier": "bfcm", "clear": true, "msrp": 14999, "site": 14999, "bf": 12999, "ship": 699, "ssite": 699, "total": 13698, "stock": 6, "us": 1, "tr": 1, "cn": 4, "semi": 2, "npcr": 25.6}, {"sku": "ODL-XRF-38-US01", "zh": "XRF 38W RF", "en": "XRF 38W RF", "tier": "super", "clear": true, "msrp": 5499, "site": 4999, "bf": 4499, "ship": 0, "ssite": 399, "total": 4499, "stock": 120, "us": 9, "tr": 52, "cn": 59, "semi": 27, "npcr": 18.7, "raw": 21.2, "gift": "air", "npcrB": 20.3}, {"sku": "ODL-XT-55-US01", "zh": "XT 55W 玻璃管", "en": "XT 55W glass tube", "tier": "super", "clear": true, "msrp": 4599, "site": 3599, "bf": 3599, "ship": 0, "ssite": 399, "total": 3599, "stock": 1, "us": 0, "tr": 0, "cn": 1, "semi": 0, "npcr": 21.3}];
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const by=s=>R.find(r=>r.sku===s);
+const IN=R.filter(r=>r.tier!=='no'), CL=IN.filter(r=>r.clear);
+const sum=(a,f)=>a.reduce((s,r)=>s+f(r),0);
+const rev=r=>r.bf2?r.s1n*r.total+(r.stock-r.s1n)*r.total2:r.stock*r.total;
+const band=v=>v>=25?'e':v>=20?'s':v>=15?'m':'c';
+const BC={x:['#475569','#f1f5f9'],e:['#16a34a','#e8f7ee'],s:['#ca8a04','#fef6dc'],m:['#ea580c','#fff0e6'],c:['#dc2626','#fdecec']};
+const PRI=[
+ {g:'linear-gradient(160deg,#ff5a1f,#ff9a3d)',g2:'#ff5a1f',skus:['ODL-XRF-38-US01']},
+ {g:'linear-gradient(160deg,#7c3aed,#c026d3)',g2:'#9333ea',skus:['OCL-HRA07-RF70-US02']},
+ {g:'linear-gradient(160deg,#1d4ed8,#06b6d4)',g2:'#2563eb',skus:['OCL-HRA09-10038-US01']},
+ {g:'linear-gradient(160deg,#0f766e,#10b981)',g2:'#0f766e',skus:['OCL-HRA09-RF70-US02','OCL-HRA13-RF70-US02','OCL-HRA16-RF70-US02']},
+ {g:'linear-gradient(160deg,#475569,#94a3b8)',g2:'#475569',skus:['OCL-HRA07-80-US01','OCL-HRA16-15038-US01','ODL-XT-55-US01']}];
+const T={
+zh:{tag:'OneLaser · 团队内部说明 · 2026-11-05 定稿',h1:'2026 <em>BFCM</em> 价格策略与清货目标',
+lead:'这次黑五的核心是<b>清库存</b>：9 款停产型号共 192 台，目标全部卖完；其中 XRF 38W RF 一款就有 120 台，是头号任务。现行主力 Hydra Hybrid（G2）不打折、保持原价；VertiGo 和 Cobra 用黑五价拉量。所有价格（含赠品成本）都在公司利润底线之内。',
+k:['参加黑五','黑五总库存','清货目标','美国现货','全部售出收入'],ku:['款','台','台','台',''],
+s1:'一句话策略',s1s:'三条主线，所有动作都围绕它们。',
+pil:[['01','清库存优先','9 款停产型号全部卖完下架，不补货。XRF 38W RF、Hydra 07 Pro 给最大力度和最多曝光。',x=>`${x.cu}<small> 台清货目标</small>`],
+['02','新品性价比拉量','VertiGo 和 Cobra 三款用黑五价走量、抢份额，利润守在 17–25%。',x=>`${x.nu}<small> 台在售新品</small>`],
+['03','主力保价','Hydra Hybrid（G2）9 / 13 / 16 不参加黑五，保持原价，守住价格体系。',x=>`3<small> 款不打折</small>`]],
+s2:'价格怎么定：对照公司利润规则',s2s:'公司规则按 NPCR（利润贡献率）分档。每款黑五价落在哪一档，决定了它还能不能再让价——答案是：都不能。',
+lad:[['x','保持原价','NPCR 30% 以上','MSRP 定价区间（30–50%）。'],['e','日常竞争价','NPCR 25–30%','日常运营调价区间；在售新品主推的利润。'],['s','小促','NPCR 20–25%','清货型号里利润还较厚的，力度留有余地。'],['m','大促','NPCR 15–20%','黑五、停产型号的大促区间，一年 1–2 次。'],['c','清仓','NPCR 10–15%','清仓最低区间；只有 Hydra 07 Pro 前 14 台用到，第 15 台起涨价回到大促区间。']],
+none:'无',
+s3:'清货重点与目标',s3s:'按优先级排列。目标 = 全部卖完；条形图是库存所在地。',
+pn:['XRF 38W RF —— 头号清货','Hydra 07 Pro —— 第二优先','Hydra 09 双光','G2 Pro 三款','单台尾货'],
+ps:['120 台占清货量的 62%。两档套装：$4,499 包邮送吹气盒子做引流；$4,999 再加送底座和 2 包材料，销售主动推升级。','31 台分两段卖：前 14 台 $7,999（立省 $3,000，全场最多），卖满 14 台立即涨到 $8,999，剩下 17 台按新价卖完。宣传主打"前 14 台"限量。','双管机：玻璃管切割 + RF 精雕，$8,999，运费比官网少 $100。','Hydra 09 / 13 / 16 Pro，立省 $2,000；成品现货少，卖完即止。','各剩 1 台，按黑五价卖完即可，不单独投放。'],
+inc:{ship:'包邮',air:'送吹气盒子',base:'送底座',mat:'送 2 包材料（亚克力 + 皮革）'},bgift:'+ 赠品',st1:'阶段 1 · 前 14 台',st2:'阶段 2 · 第 15–31 台',bA:'套装 A · 引流价',bB:'套装 B · 送更多（主推升级）',nb:'XRF 38W RF 两档套装',nbs:'同一台 XRF 38W RF，两种卖法。多付 $500 换底座 + 2 包材料，销售主动推 B。',nbm:'<b>利润说明：</b>两档都已扣除赠品成本——A 含吹气盒子约 18.7%，B 含吹气盒子和底座约 20.3%（2 包材料成本未知，未计入）。都在 15–20% 的大促区间内。',gnote:'含赠品成本',raw:'表内',goal:'目标卖出',units:'台',rev:'预计收入',loc:['美国','在途','中国（含半成品）'],save:'立省',free:'包邮',
+alt:'246 台里只有 45 台在美国',alp:'XRF 38W RF 美国仅 9 台、在途 52 台、国内 59 台；VertiGo 美国 0 台、在途 24 台；XT 唯一 1 台在东莞。宣传和客服承诺发货时间前，必须先拿到在途到港时间，否则会出现"卖了发不出"。',
+s4:'完整价格表',lock:'内部资料 · 勿外发',s4s:'到手价 = 黑五价 + 运费。NPCR 颜色对应上面的利润档位。灰色行 = 不参加黑五。',
+th:['型号','活动','MSRP','官网现价','黑五价','立省','运费','到手价','库存 / 美国','NPCR'],
+tier:{super:'Super Price',bfcm:'BFCM',tbd:'待定',clr:'清货',no:'不参加'},clr:'清货',
+s5:'各团队怎么做',s5s:'按首问责任制：分到谁，谁负责到底。',
+teams:[['市场','#ff5a1f',['广告预算优先给 XRF 38W RF 和 Hydra 07 Pro','Hydra 07 Pro 宣传"前 14 台 $7,999"，卖满后同步改素材为 $8,999','"立省"一律以 MSRP 为基准；Hydra 09 双光和 XT 官网已是黑五价，宣传重点放在包邮/运费优惠和限量','"限量 X 台"按美国现货 + 确认到港的数量写','邮件、社媒、KOL 统一用同一套价格和核心信息']],
+['销售','#2563eb',['表中黑五价就是最低价，不再叠加折扣码','XRF 38W RF 主动推 $4,999 套装 B（加送底座 + 2 包材料）','Hybrid G2 不打折；客户问就引导看功能和 ROI','配件和材料不打折']],
+['客服','#16a34a',['按库存所在地回答发货时间：美国现货 vs 在途 vs 国内','清货型号说明"卖完即止，不补货"','黑五订单优先处理，差评 24 小时内回复']],
+['网站','#0f766e',['活动页和产品页按两档标价，显示 MSRP 划线价','清货型号卖完立即下架','Hydra 07 Pro 卖满 14 台后当天改价为 $8,999','Hybrid G2 保持原价，确认运费不被改动','每天巡检价格、库存、运费是否和本表一致']],
+['运营 / 仓储','#7c3aed',['催在途 XRF 38W RF（52 台）、VertiGo（24 台）、Cobra（8 台）到港','东莞半成品能否在活动期内完成并发出，给出明确日期','每天更新美国可售数量给市场和客服']],
+['管理层','#dc2626',['每天看清货进度：已售 / 目标','盯 Hydra 07 Pro：卖满 14 台当天通知网站改价到 $8,999','活动结束一周内复盘']]],
+s6:'上线前待确认',s6s:'这几处表里仍有冲突或空白，上线前要定。',
+todo:[['XT 55W 价格','备注写 $3,699 免运费，表中黑五价是 $3,599；且唯一 1 台在东莞，美国 0 台——要不要在美国站卖？'],['对外库存口径','备注数（Hydra 09 Pro 6、Hydra 13 Pro 3、Hydra 16 Pro 4）不含东莞半成品；VertiGo 备注 25 台、表中 29 台。对外承诺用哪个数？'],['在途到港时间','XRF 38W RF 52 台、VertiGo 24 台、Cobra 8 台在途，需要 ETA。'],['Hybrid G2 运费','不参加黑五，但表中黑五运费比官网少 $100（Hydra 09 / 13 Hybrid）。确认运费也保持不变。'],['XRF 38W RF 套装 B 材料包成本','2 包材料（亚克力 + 皮革）的成本不在表里，套装 B 的利润还差这一项。']],
+foot:'来源：OneLaser NPCR 测算表 Final（主机 Machines，2026-11-05）。NPCR 按 18% 销售费率计算，收入含运费。利润档位依据公司 2026-11 定价规则。'},
+en:{tag:'OneLaser · Internal team brief · Final 2026-11-05',h1:'2026 <em>BFCM</em> Pricing Strategy & Clearance Goals',
+lead:'This Black Friday is about <b>clearing inventory</b>: 192 units across 9 discontinued models, and the goal is to sell every one — XRF 38W RF alone is 120 units and job number one. The current Hydra Hybrid (G2) line stays at full price; VertiGo and the Cobras use BF prices to drive volume. Every price, gift cost included, stays within the company\'s margin floors.',
+k:['Models in BF','BF stock','Clearance goal','In the US now','Revenue if all sell'],ku:['','units','units','units',''],
+s1:'The strategy in one line',s1s:'Three threads; every action serves one of them.',
+pil:[['01','Clearance first','All 9 discontinued models sell out and come off the site — no restock. XRF 38W RF and Hydra 07 Pro get the deepest prices and the most exposure.',x=>`${x.cu}<small> units to clear</small>`],
+['02','Volume on current models','VertiGo and the three Cobras use BF prices to win volume and share, holding margin at 17–25%.',x=>`${x.nu}<small> current-model units</small>`],
+['03','Protect the core line','Hydra Hybrid (G2) 9 / 13 / 16 sit out Black Friday at full price to protect price integrity.',x=>`3<small> models at full price</small>`]],
+s2:'How prices were set: against company margin rules',s2s:'Company rules tier prices by NPCR (contribution margin). Where each BF price lands tells you whether there is room to discount further — there isn\'t.',
+lad:[['x','Full price','NPCR 30%+','MSRP range (30–50%).'],['e','Everyday competitive','NPCR 25–30%','Everyday adjustment range; current-model hero margin.'],['s','Small promo','NPCR 20–25%','Clearance models that still carry healthy margin.'],['m','Major promo','NPCR 15–20%','Black Friday and phase-out promos, 1–2 times a year.'],['c','Clearance','NPCR 10–15%','The lowest band; only the first 14 Hydra 07 Pro units use it — from unit 15 the price moves back into the major-promo band.']],
+none:'None',
+s3:'Clearance priorities and goals',s3s:'In priority order. Goal = sell out; the bar shows where the stock sits.',
+pn:['XRF 38W RF — clearance #1','Hydra 07 Pro — #2','Hydra 09 dual','The three G2 Pro models','Single-unit leftovers'],
+ps:['120 units, 62% of clearance volume. Two bundles: $4,499 with free shipping and an Air Assist box pulls traffic; $4,999 adds a base and 2 material packs — sales should push the upgrade.','31 units in two stages: the first 14 at $7,999 (save $3,000, the biggest in the sale); after 14 sell, the price goes straight to $8,999 for the remaining 17. Lead with "first 14 only".','Dual tube: glass for cutting + RF for fine engraving, $8,999, shipping $100 below the site rate.','Hydra 09 / 13 / 16 Pro, save $2,000; little finished stock, gone when gone.','One unit each; sell at BF price, no dedicated ads.'],
+inc:{ship:'Free shipping',air:'Free Air Assist box',base:'Free base',mat:'2 free material packs (acrylic + leather)'},bgift:'+ gifts',st1:'Stage 1 · first 14 units',st2:'Stage 2 · units 15–31',bA:'Bundle A · traffic price',bB:'Bundle B · more gifts (upsell)',nb:'XRF 38W RF: two bundles',nbs:'The same XRF 38W RF, sold two ways. $500 more adds a base + 2 material packs — sales should push B.',nbm:'<b>Margin note:</b> both include gift cost — A with the Air Assist box is about 18.7%, B with Air Assist box and base about 20.3% (the 2 material packs are not costed yet). Both sit in the 15–20% major-promo band.',gnote:'incl. gift cost',raw:'sheet',goal:'Sell',units:'units',rev:'Revenue',loc:['US','In transit','China (incl. semi-finished)'],save:'Save',free:'Free ship',
+alt:'Only 45 of 246 units are in the US',alp:'XRF 38W RF: 9 in the US, 52 in transit, 59 in China; VertiGo: 0 in the US, 24 in transit; the single XT is in Dongguan. Get in-transit ETAs before marketing or support promise ship dates, or we will sell what we cannot ship.',
+s4:'Full price list',lock:'Internal · do not share',s4s:'Total = BF price + shipping. NPCR colors match the margin bands above. Grey rows = not in Black Friday.',
+th:['Model','Promo','MSRP','Site price','BF price','Save','Shipping','Total','Stock / US','NPCR'],
+tier:{super:'Super Price',bfcm:'BFCM',tbd:'TBD',clr:'Clearance',no:'Not in sale'},clr:'Clearance',
+s5:'What each team does',s5s:'First-responder ownership: whoever gets it, owns it to the end.',
+teams:[['Marketing','#ff5a1f',['Ad budget goes to XRF 38W RF and Hydra 07 Pro first','Promote Hydra 07 Pro as "first 14 at $7,999"; switch creative to $8,999 once they sell','"Save" is always measured from MSRP; Hydra 09 dual and XT already sell at the BF price on the site, so lead with free / lower shipping and limited stock','Write "only X left" from US stock plus confirmed arrivals','Email, social and KOLs use one price set and one core message']],
+['Sales','#2563eb',['The BF price is the floor — no stacked codes','Upsell XRF 38W RF to the $4,999 Bundle B (+ base + 2 material packs)','Hybrid G2 is not discounted; steer to features and ROI','Accessories and materials are never discounted']],
+['Support','#16a34a',['Quote ship times by stock location: US vs in transit vs China','Clearance models are "gone when gone, no restock"','Prioritize BF orders; answer bad reviews within 24 hours']],
+['Website','#0f766e',['Promo and product pages show the two tiers with MSRP struck through','Delist clearance models the moment they sell out','Reprice Hydra 07 Pro to $8,999 the day unit 14 sells','Keep Hybrid G2 at full price and check its shipping is unchanged','Check prices, stock and shipping against this sheet daily']],
+['Ops / warehouse','#7c3aed',['Chase in-transit XRF 38W RF (52), VertiGo (24) and Cobra (8)','Give a firm date for whether Dongguan semi-finished units can ship in the window','Send US sellable counts to marketing and support daily']],
+['Management','#dc2626',['Track clearance progress daily: sold vs goal','Watch Hydra 07 Pro: the day unit 14 sells, have the site move it to $8,999','Post-mortem within a week of the end']]],
+s6:'Open items before launch',s6s:'Conflicts or blanks still in the sheet; settle before launch.',
+todo:[['XT 55W price','The note says $3,699 with free shipping; the BF price is $3,599. The only unit is in Dongguan, none in the US — sell it on the US site?'],['Which stock number to promise','Notes (Hydra 09 Pro 6, Hydra 13 Pro 3, Hydra 16 Pro 4) exclude Dongguan semi-finished units; VertiGo note says 25, the sheet 29.'],['In-transit ETAs','XRF 38W RF (52), VertiGo (24) and Cobra (8) are in transit — need ETAs.'],['Hybrid G2 shipping','Not in the sale, but the sheet\'s BF shipping is $100 below the site for Hydra 09 / 13 Hybrid. Confirm shipping stays unchanged.'],['XRF 38W RF Bundle B material-pack cost','The cost of the 2 material packs (acrylic + leather) is not in the sheet, so Bundle B margin is missing that line.']],
+foot:'Source: OneLaser NPCR model, Final (Machines sheet, 2026-11-05). NPCR at an 18% selling rate, revenue including shipping. Margin bands per the company pricing rules (Nov 2026).'}};
+let L='zh';try{L=localStorage.getItem('bfs-lang')||'zh'}catch(e){}
+function render(){
+ const t=T[L];document.documentElement.lang=L==='zh'?'zh':'en';
+ document.querySelectorAll('[data-t]').forEach(el=>el.innerHTML=t[el.dataset.t]);
+ bz.className=L==='zh'?'on':'';be.className=L==='en'?'on':'';
+ const nm=r=>L==='zh'?r.zh:r.en;
+ const x={cu:sum(CL,r=>r.stock),nu:sum(IN.filter(r=>!r.clear),r=>r.stock)};
+ const kv=[IN.length,sum(IN,r=>r.stock),x.cu,sum(IN,r=>r.us),'$'+(sum(IN,rev)/1e6).toFixed(2)+'M'],kc=['#1b2a6b','#2563eb','#dc2626','#d97706','#16a34a'];
+ kpis.innerHTML=kv.map((v,i)=>`<div class="kpi" style="--c:${kc[i]}"><div class="v">${v}<small style="font-size:13px;font-weight:600"> ${t.ku[i]}</small></div><div class="l">${t.k[i]}</div></div>`).join('');
+ const pg=['linear-gradient(135deg,#dc2626,#ff7a3d)','linear-gradient(135deg,#2563eb,#06b6d4)','linear-gradient(135deg,#334155,#64748b)'];
+ pillars.innerHTML=t.pil.map((p,i)=>`<div class="pl" style="--g:${pg[i]}"><div class="no">${p[0]}</div><h3>${p[1]}</h3><p>${p[2]}</p><div class="big">${p[3](x)}</div></div>`).join('');
+ ladder.innerHTML=t.lad.map(l=>{const c=BC[l[0]];const items=R.filter(r=>l[0]==='x'?r.tier==='no':(r.tier!=='no'&&band(r.npcr)===l[0]));const extra=l[0]==='x'?[]:R.filter(r=>r.bf2&&band(r.npcr2)===l[0]);return `<div class="rung" style="--c:${c[0]};--cb:${c[1]}"><div class="lv"><b>${l[1]}</b><span>${l[2]}</span></div><div class="it"><div class="use">${l[3]}</div>${items.length+extra.length?items.map(r=>`<span class="sku">${nm(r)}${r.bf2?(L==='zh'?' 前14台':' first 14'):''}<i>${r.npcr.toFixed(1)}%</i></span>`).join('')+extra.map(r=>`<span class="sku">${nm(r)}${L==='zh'?' 第15台起':' unit 15+'}<i>${r.npcr2.toFixed(1)}%</i></span>`).join(''):`<span class="empty">${t.none}</span>`}</div></div>`}).join('');
+ pri.innerHTML=PRI.map((p,i)=>{const rs=p.skus.map(by),st=sum(rs,r=>r.stock),us=sum(rs,r=>r.us),tr=sum(rs,r=>r.tr),cn=sum(rs,r=>r.cn),rv=sum(rs,rev);const one=rs.length===1?rs[0]:null;
+  const ch=k=>`<span class="chip" style="--b:${k==='ship'?'var(--goodbg)':k==='air'?'#f3e8ff':k==='base'?'#e0f2fe':'#fef3c7'};--f:${k==='ship'?'var(--good)':k==='air'?'#7c3aed':k==='base'?'#0369a1':'#b45309'}">${t.inc[k]}</span>`;
+  const price=i===1?`<div class="opts"><div class="op hot"><span class="ol">${t.st1}</span><span class="now">$${fmt(one.bf)}</span><div class="chips"><span class="chip" style="--b:var(--badbg);--f:var(--bad)">${t.save} $${fmt(one.msrp-one.bf)}</span><span class="chip" style="--b:#eef0f4;--f:var(--ink2)">+$${one.ship}</span></div></div><div class="op"><span class="ol">${t.st2}</span><span class="now">$${fmt(one.bf2)}</span><div class="chips"><span class="chip" style="--b:var(--badbg);--f:var(--bad)">${t.save} $${fmt(one.msrp-one.bf2)}</span><span class="chip" style="--b:#eef0f4;--f:var(--ink2)">+$${one.ship}</span></div></div></div><div class="px"><span class="was">MSRP $${fmt(one.msrp)}</span></div>`:i===0?`<div class="opts"><div class="op"><span class="ol">${t.bA}</span><span class="now">$4,499</span><div class="chips">${ch('ship')}${ch('air')}</div></div><div class="op hot"><span class="ol">${t.bB}</span><span class="now">$4,999</span><div class="chips">${ch('ship')}${ch('air')}${ch('base')}${ch('mat')}</div></div></div><div class="px"><span class="was">MSRP $${fmt(one.msrp)}</span></div>`:one?`<div class="px"><span class="now">$${fmt(one.bf)}</span><span class="was">$${fmt(one.msrp)}</span><span class="chip" style="--b:var(--badbg);--f:var(--bad)">${t.save} $${fmt(one.msrp-one.bf)}</span>${one.ship===0?`<span class="chip" style="--b:var(--goodbg);--f:var(--good)">${t.free}</span>`:`<span class="chip" style="--b:#eef0f4;--f:var(--ink2)">+$${one.ship}</span>`}</div>`:`<div class="px">${rs.map(r=>`<span class="chip" style="--b:#eef2ff;--f:#3730a3">${nm(r)} · $${fmt(r.bf)} · ${r.stock}</span>`).join('')}</div>`;
+  return `<div class="pc" style="--g:${p.g};--g2:${p.g2}"><div class="rk"><b>P${i+1}</b><span>${st} ${t.units}</span></div><div class="md"><h3>${t.pn[i]}</h3>${price}<div class="say">${t.ps[i]}</div></div><div class="rt"><div class="goal"><b>${st}</b>${t.units} · ${t.goal}</div><div class="goal">${t.rev} $${fmt(rv)}</div><div class="loc"><i style="width:${us/st*100}%;background:#16a34a"></i><i style="width:${tr/st*100}%;background:#f5b301"></i><i style="width:${cn/st*100}%;background:#94a3b8"></i></div><div class="lk"><span style="--c:#16a34a">${t.loc[0]} ${us}</span><span style="--c:#f5b301">${t.loc[1]} ${tr}</span><span style="--c:#94a3b8">${t.loc[2]} ${cn}</span></div></div></div>`}).join('');
+ const order=[...R].sort((a,b)=>(a.tier==='no')-(b.tier==='no')||(b.clear-a.clear)||b.stock-a.stock);
+ tbl.innerHTML='<thead><tr>'+t.th.map(h=>`<th>${h}</th>`).join('')+'</tr></thead><tbody>'+order.map(r=>{const c=BC[r.tier==='no'?'x':band(r.npcr)];const sd=r.ship-r.ssite;return `<tr class="${r.tier==='no'?'no':''}"><td><b>${nm(r)}</b>${r.clear?`<span class="clr">${t.clr}</span>`:''}${r.newm?`<span class="clr" style="background:#16a34a">${L==='zh'?'新品':'New'}</span>`:''}<span class="mini">${r.sku}${r.gift==='air'?' · '+t.inc.air:''}${r.gift==='bundle'?' · '+t.inc.air+' + '+t.inc.base+' + '+t.inc.mat:''}</span></td><td><span class="badge b-${r.tier}">${t.tier[r.tier]}</span></td><td style="color:#9aa3b2;text-decoration:line-through">$${fmt(r.msrp)}</td><td>$${fmt(r.site)}</td><td><b style="font-size:15px">$${fmt(r.bf)}</b></td><td style="color:var(--bad);font-weight:700">${r.msrp>r.bf?'$'+fmt(r.msrp-r.bf)+(r.gift?' '+t.bgift:''):'—'}</td><td>${r.ship===0?`<span class="free">${t.free}</span>`:'$'+r.ship}${r.tier!=='no'&&r.ship>0&&sd<0?`<span class="mini" style="color:var(--good)">−$${-sd}</span>`:''}</td><td><b>$${fmt(r.total)}</b></td><td>${r.stock} / <b style="color:${r.us?'var(--good)':'var(--bad)'}">${r.us}</b></td><td><span class="np" style="--c:${c[0]};--cb:${c[1]}">${r.npcr.toFixed(1)}%</span>${r.gift?`<span class="mini">${t.gnote}${r.raw?` · ${t.raw} ${r.raw}%`:''}${r.gift==='bundle'?(L==='zh'?' · 未含材料':' · excl. materials'):''}</span>`:''}</td></tr>`+(r.bf2?`<tr class="bund"><td><b>↳ ${nm(r)} · ${t.st2}</b><span class="mini">${L==='zh'?'卖满 14 台后改价':'after 14 units sell'}</span></td><td><span class="badge b-super">Super Price</span></td><td style="color:#9aa3b2;text-decoration:line-through">$${fmt(r.msrp)}</td><td>$${fmt(r.site)}</td><td><b style="font-size:15px">$${fmt(r.bf2)}</b></td><td style="color:var(--bad);font-weight:700">$${fmt(r.msrp-r.bf2)}</td><td>$${r.ship}</td><td><b>$${fmt(r.total2)}</b></td><td>${r.stock-r.s1n}</td><td><span class="np" style="--c:${BC[band(r.npcr2)][0]};--cb:${BC[band(r.npcr2)][1]}">${r.npcr2.toFixed(1)}%</span></td></tr>`:'')+(r.sku==='ODL-XRF-38-US01'?`<tr class="bund"><td><b>↳ ${nm(r)} · ${t.bB}</b><span class="mini">${t.inc.air} + ${t.inc.base} + ${t.inc.mat}</span></td><td><span class="badge b-super">Super Price</span></td><td style="color:#9aa3b2;text-decoration:line-through">$${fmt(r.msrp)}</td><td>$${fmt(r.site)}</td><td><b style="font-size:15px">$4,999</b></td><td style="color:var(--bad);font-weight:700">$${fmt(r.msrp-4999)} ${t.bgift}</td><td><span class="free">${t.free}</span></td><td><b>$4,999</b></td><td>${L==='zh'?'共用 120':'shares 120'}</td><td><span class="np" style="--c:#ea580c;--cb:#fff0e6">${r.npcrB.toFixed(1)}%</span><span class="mini">${t.gnote}${L==='zh'?' · 未含材料':' · excl. materials'}</span></td></tr>`:'')}).join('')+'</tbody>';
+ {const a=by('ODL-XRF-38-US01');const ch2=k=>`<span class="chip" style="--b:${k==='ship'?'var(--goodbg)':k==='air'?'#f3e8ff':k==='base'?'#e0f2fe':'#fef3c7'};--f:${k==='ship'?'var(--good)':k==='air'?'#7c3aed':k==='base'?'#0369a1':'#b45309'}">${t.inc[k]}</span>`;const card=(c,hd,pr,np,ks)=>`<div class="nbk" style="--bc:${c}"><div class="hd">${hd}</div><div class="nm">${nm(a)}</div><span class="now">$${fmt(pr)}</span><span class="was">$${fmt(a.msrp)}</span><div class="chips">${ks.map(ch2).join('')}</div><div style="font-size:12.5px;color:var(--ink2);margin-top:8px">NPCR ${np.toFixed(1)}% · ${t.th[8]}: ${a.stock} / ${a.us}</div></div>`;nbx.innerHTML=`<div class="nbc">${card('#64748b',t.bA,4499,a.npcr,['ship','air'])}${card('#ff5a1f',t.bB,4999,a.npcrB,['ship','air','base','mat'])}</div><div class="warnbox" style="background:#e8f7ee;border-color:#86efac;color:#14532d">${t.nbm}</div>`;}
+ teams.innerHTML=t.teams.map(m=>`<div class="tm"><h3 style="--c:${m[1]}">${m[0]}</h3><ul>${m[2].map(s=>`<li>${s}</li>`).join('')}</ul></div>`).join('');
+ todo.innerHTML=t.todo.map((x,i)=>`<div class="td"><div class="n">${i+1}</div><div><b>${x[0]}</b><span>${x[1]}</span></div></div>`).join('');
+ document.title=L==='zh'?'OneLaser 2026 BFCM 价格策略与清货目标':'OneLaser 2026 BFCM Pricing Strategy & Clearance Goals';
+}
+function setL(l){L=l;try{localStorage.setItem('bfs-lang',l)}catch(e){}render()}
+bz.onclick=()=>setL('zh');be.onclick=()=>setL('en');render();
+</script>
+</body>
+</html>
